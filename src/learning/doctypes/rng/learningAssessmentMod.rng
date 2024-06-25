@@ -9,9 +9,9 @@
 =============================================================
                    HEADER                                    
 =============================================================
- MODULE:    DITA learningAssessment                          
- VERSION:   1.2                                              
- DATE:      November 2009                                    
+ MODULE:    DITA Learning Asessment topic type                             
+ VERSION:   2.0                                       
+ DATE:      November 2023                                    
                                                              
 =============================================================
 
@@ -21,8 +21,8 @@
                                                              
  Refer to this file by the following public identfier or an 
       appropriate system identifier 
-PUBLIC "-//OASIS//ELEMENTS DITA Learning Assessment//EN"
-      Delivered as file "learningAssessment.mod                   
+
+urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningAssessmentMod.rng:2.0
 
 =============================================================
 SYSTEM:     Darwin Information Typing Architecture (DITA)    
@@ -33,8 +33,12 @@ PURPOSE:    Declaring the elements and specialization
 ORIGINAL CREATION DATE:                                      
             May 2007                                         
                                                              
-            (C) Copyright OASIS Open 2007, 2009.             
-            All Rights Reserved.                             
+            (C) Copyright OASIS Open 2007, 2023           
+            All Rights Reserved.    
+            
+UPDATES:                                                    
+   2023.11.05 WEK: Updated for DITA 2.0.
+            
 =============================================================
 </headerComment>
     <moduleMetadata>
@@ -43,13 +47,11 @@ ORIGINAL CREATION DATE:
       <modulePublicIds>
         <dtdMod>-//OASIS//ELEMENTS DITA<var presep=" " name="ditaver"/> Learning Assessment//EN</dtdMod>
         <dtdEnt>-//OASIS//ENTITIES DITA<var presep=" " name="ditaver"/> Learning Assessment//EN</dtdEnt>
-        <xsdMod>urn:oasis:names:tc:dita:spec:learning:xsd:learningAssessmentMod.xsd<var presep=":" name="ditaver"/></xsdMod>
-        <xsdGrp>urn:oasis:names:tc:dita:spec:learning:xsd:learningAssessmentGrp.xsd<var presep=":" name="ditaver"/></xsdGrp>
-        <rncMod>urn:oasis:names:tc:dita:spec:learning:rnc:learningAssessmentMod.rnc<var presep=":" name="ditaver"/></rncMod>
-        <rngMod>urn:oasis:names:tc:dita:spec:learning:rng:learningAssessmentMod.rng<var presep=":" name="ditaver"/></rngMod>
+        <xsdMod>urn:pubid:oasis:names:tc:dita:spec:learning:xsd:learningAssessmentMod.xsd<var presep=":" name="ditaver"/></xsdMod>
+        <xsdGrp>urn:pubid:oasis:names:tc:dita:spec:learning:xsd:learningAssessmentGrp.xsd<var presep=":" name="ditaver"/></xsdGrp>
+        <rncMod>urn:pubid:oasis:names:tc:dita:spec:learning:rnc:learningAssessmentMod.rnc<var presep=":" name="ditaver"/></rncMod>
+        <rngMod>urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningAssessmentMod.rng<var presep=":" name="ditaver"/></rngMod>
       </modulePublicIds>
-      <domainsContribution>(topic learningBase+learningInteractionBase-d)</domainsContribution>
-      <domainsContribution>(topic learningBase+learningInteractionBase-d learningAssessment)</domainsContribution>
     </moduleMetadata>
   </moduleDesc>
   <div>
@@ -74,9 +76,6 @@ ORIGINAL CREATION DATE:
       <define name="learningAssessment.content">
         <ref name="title"/>
         <optional>
-          <ref name="titlealts"/>
-        </optional>
-        <optional>
           <choice>
             <ref name="shortdesc"/>
             <ref name="abstract"/>
@@ -100,10 +99,7 @@ ORIGINAL CREATION DATE:
         <ref name="conref-atts"/>
         <ref name="select-atts"/>
         <ref name="localization-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="learningAssessment.element">
         <element name="learningAssessment" dita:longName="Learning Assessment">
           <a:documentation>A Learning Assessment presents questions or interactions that measure
@@ -118,7 +114,7 @@ ORIGINAL CREATION DATE:
       <define name="learningAssessment.attlist" combine="interleave">
         <ref name="learningAssessment.attributes"/>
         <ref name="arch-atts"/>
-        <ref name="domains-att"/>
+        <ref name="specializations-att"/>
       </define>
     </div>
     <div>
@@ -145,10 +141,7 @@ ORIGINAL CREATION DATE:
       </define>
       <define name="learningAssessmentbody.attributes">
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="learningAssessmentbody.element">
         <element name="learningAssessmentbody" dita:longName="Learning Assessment Body">
           <a:documentation>The &lt;learningAssessmentbody> element is the main body-level element in a
@@ -165,13 +158,11 @@ ORIGINAL CREATION DATE:
   <div>
     <a:documentation>SPECIALIZATION ATTRIBUTE DECLARATIONS</a:documentation>
     <define name="learningAssessment.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/topic learningBase/learningBase     learningAssessment/learningAssessment "/>
       </optional>
     </define>
     <define name="learningAssessmentbody.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/body  learningBase/learningBasebody learningAssessment/learningAssessmentbody "/>
       </optional>

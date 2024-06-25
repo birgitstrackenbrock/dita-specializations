@@ -4,14 +4,14 @@
 <grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:dita="http://dita.oasis-open.org/architecture/2005/" xmlns="http://relaxng.org/ns/structure/1.0"
   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <moduleDesc xmlns="http://dita.oasis-open.org/architecture/2005/">
-    <moduleTitle>DITA Learning Domain</moduleTitle>
+    <moduleTitle>DITA Learning  Domain</moduleTitle>
     <headerComment xml:space="preserve">
 =============================================================
-                   HEADER                                    
+                          HEADER
 =============================================================
- MODULE:    DITA Learning Domain                             
- VERSION:   1.2                                              
- DATE:      November 2009                                    
+ MODULE:    DITA Learning  Domain                             
+ VERSION:   2.0                                       
+ DATE:      November 2023                                    
                                                              
 =============================================================
 
@@ -20,9 +20,9 @@
                    TYPICAL INVOCATION                        
                                                              
  Refer to this file by the following public identfier or an 
-      appropriate system identifier 
-PUBLIC "-//OASIS//ELEMENTS DITA Learning Domain//EN"
-      Delivered as file "learningDomain.mod"                     
+      appropriate system identifier:
+      
+urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningDomain.rng:2.0"
 
 =============================================================
 SYSTEM:     Darwin Information Typing Architecture (DITA)    
@@ -31,76 +31,71 @@ PURPOSE:    Declaring the elements and specialization
             attributes for Learning Domain                   
                                                              
 ORIGINAL CREATION DATE:                                      
-            May 2007                                         
+            March 2014                         
+            
                                                              
-            (C) Copyright OASIS Open 2007, 2009.             
+            (C) Copyright OASIS Open 2014, 2023          
             All Rights Reserved.                             
-                                                             
- CHANGE LOG:                                                 
-                                                             
-   Sept 2009: WEK: added lcMatchingItemFeedback per          
-   TC decision.                                              
+                                      
+UPDATES:
+   2023.11.05 WEK: Updated for DITA 2.0.
+                                      
 =============================================================  
 </headerComment>
     <moduleMetadata>
       <moduleType>elementdomain</moduleType>
       <moduleShortName>learning-d</moduleShortName>
       <modulePublicIds>
-        <dtdMod>-//OASIS//ELEMENTS DITA<var presep=" " name="ditaver"/> Learning Domain//EN</dtdMod>
-        <dtdEnt>-//OASIS//ENTITIES DITA<var presep=" " name="ditaver"/> Learning Domain//EN</dtdEnt>
-        <xsdMod>urn:oasis:names:tc:dita:spec:learning:xsd:learningDomain.xsd<var presep=":" name="ditaver"/></xsdMod>
-        <rncMod>urn:oasis:names:tc:dita:spec:learning:rnc:learningDomain.rnc<var presep=":" name="ditaver"/></rncMod>
-        <rngMod>urn:oasis:names:tc:dita:spec:learning:rng:learningDomain.rng<var presep=":" name="ditaver"/></rngMod>
+        <dtdMod>-//OASIS//ELEMENTS DITA<var presep=" " name="ditaver"/> Learning  Domain//EN</dtdMod>
+        <dtdEnt>-//OASIS//ENTITIES DITA<var presep=" " name="ditaver"/> Learning  Domain//EN</dtdEnt>
+        <xsdMod>urn:pubid:oasis:names:tc:dita:spec:learning:xsd:learningDomain.xsd<var presep=":" name="ditaver"/></xsdMod>
+        <rncMod>urn:pubid:oasis:names:tc:dita:spec:learning:rnc:learningDomain.rnc<var presep=":" name="ditaver"/></rncMod>
+        <rngMod>urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningDomain.rng<var presep=":" name="ditaver"/></rngMod>
       </modulePublicIds>
-      <domainsContribution>(topic learningInteractionBase-d learning-d)</domainsContribution>
     </moduleMetadata>
   </moduleDesc>
   <div>
     <a:documentation>DOMAIN EXTENSION PATTERNS</a:documentation>
+    <define name="learning-d-div">
+      <choice>
+        <ref name="lcTrueFalse.element"/>
+        <ref name="lcSingleSelect.element"/>
+        <ref name="lcMultipleSelect.element"/>
+        <ref name="lcSequencing.element"/>
+        <ref name="lcMatching.element"/>
+        <ref name="lcHotspot.element"/>
+        <ref name="lcOpenQuestion.element"/>
+      </choice>
+    </define>
+    <define name="div" combine="choice">
+      <ref name="learning-d-div"/>
+    </define>
+    <define name="learning-d-lcInteractionBase">
+      <choice>
+        <ref name="lcTrueFalse.element"/>
+        <ref name="lcSingleSelect.element"/>
+        <ref name="lcMultipleSelect.element"/>
+        <ref name="lcSequencing.element"/>
+        <ref name="lcMatching.element"/>
+        <ref name="lcHotspot.element"/>
+        <ref name="lcOpenQuestion.element"/>
+      </choice>
+    </define>
+    <define name="lcInteractionBase" combine="choice">
+      <ref name="learning-d-lcInteractionBase"/>
+    </define>
     <define name="learning-d-note">
       <ref name="lcInstructornote.element"/>
     </define>
     <define name="note" combine="choice">
       <ref name="learning-d-note"/>
     </define>
-    <div>
-      <a:documentation>The following elements are specializations of
-        lcInteractionBase, which is a specialization of fig. So, 
-        they are available as replacements for each of those
-        elements.</a:documentation>
-      <define name="learning-d-fig">
-        <choice>
-          <ref name="lcTrueFalse.element"/>
-          <ref name="lcSingleSelect.element"/>
-          <ref name="lcMultipleSelect.element"/>
-          <ref name="lcSequencing.element"/>
-          <ref name="lcMatching.element"/>
-          <ref name="lcHotspot.element"/>
-          <ref name="lcOpenQuestion.element"/>
-        </choice>
-      </define>
-      <define name="fig" combine="choice">
-        <ref name="learning-d-fig"/>
-      </define>
-
-      <define name="learning-d-lcInteractionBase">
-        <choice>
-          <ref name="lcTrueFalse.element"/>
-          <ref name="lcSingleSelect.element"/>
-          <ref name="lcMultipleSelect.element"/>
-          <ref name="lcSequencing.element"/>
-          <ref name="lcMatching.element"/>
-          <ref name="lcHotspot.element"/>
-          <ref name="lcOpenQuestion.element"/>
-        </choice>
-      </define>
-      <define name="lcInteractionBase" combine="choice">
-        <ref name="learning-d-lcInteractionBase"/>
-      </define>
-    </div>
   </div>
   <div>
     <a:documentation>ELEMENT TYPE NAME PATTERNS</a:documentation>
+    <define name="lcInstructorNote">
+      <ref name="lcInstructornote.element"/>
+    </define>
     <define name="lcQuestion">
       <ref name="lcQuestion.element"/>
     </define>
@@ -170,52 +165,48 @@ ORIGINAL CREATION DATE:
     <define name="lcFeedback">
       <ref name="lcFeedback.element"/>
     </define>
-
   </div>
   <div>
     <a:documentation>ELEMENT TYPE DECLARATIONS</a:documentation>
-
     <div>
       <a:documentation>MISCELANEOUS TYPES</a:documentation>
-      <div>
-        <a:documentation>LONG NAME: Instructor note</a:documentation>
-        <define name="lcInstructornote.content">
-          <zeroOrMore>
-            <ref name="note.cnt"/>
-          </zeroOrMore>
-        </define>
-        <define name="lcInstructornote.attributes">
-          <optional>
-            <attribute name="spectitle"/>
-          </optional>
-          <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
-        <define name="lcInstructornote.element">
-          <element name="lcInstructornote" dita:longName="Instructor note">
-            <a:documentation><![CDATA[Use the <lcInstructornote> element to provide information or notes you want to provide to the course instructor. These notes can be conditionnalized out of content you intend to deliver to the learner. ]]></a:documentation>
-            <ref name="lcInstructornote.attlist"/>
-            <ref name="lcInstructornote.content"/>
-          </element>
-        </define>
-        <define name="lcInstructornote.attlist" combine="interleave">
-          <ref name="lcInstructornote.attributes"/>
-        </define>
-      </div>
+    <div>
+      <a:documentation>LONG NAME: Instructor note</a:documentation>
+      <define name="lcInstructornote.content">
+        <zeroOrMore>
+          <ref name="note.cnt"/>
+        </zeroOrMore>
+      </define>
+      <define name="lcInstructornote.attributes">
+        <optional>
+          <attribute name="spectitle"/>
+        </optional>
+        <ref name="univ-atts"/>
+     </define>
+      <define name="lcInstructornote.element">
+        <element name="lcInstructornote" dita:longName="Instructor note">
+          <a:documentation><![CDATA[Use the <lcInstructornote2> element to provide information or notes you want to provide to the course instructor. These notes can be conditionnalized out of content you intend to deliver to the learner. ]]></a:documentation>
+          <ref name="lcInstructornote.attlist"/>
+          <ref name="lcInstructornote.content"/>
+        </element>
+      </define>
+      <define name="lcInstructornote.attlist" combine="interleave">
+        <ref name="lcInstructornote.attributes"/>
+      </define>
+    </div>
     </div>
     <div>
       <a:documentation>INTERACTION DEFINITIONS</a:documentation>
       <div>
+        <a:documentation>LONG NAME: True or false interaction</a:documentation>
         <define name="lcTrueFalse.content">
           <optional>
-            <ref name="title"/>
+            <ref name="lcInteractionLabel"/>
           </optional>
           <ref name="lcQuestion"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcAsset"/>
-          </optional>
+          </zeroOrMore>
           <ref name="lcAnswerOptionGroup"/>
           <optional>
             <ref name="lcFeedbackIncorrect"/>
@@ -228,18 +219,17 @@ ORIGINAL CREATION DATE:
           </zeroOrMore>
         </define>
         <define name="lcTrueFalse.attributes">
-          <attribute name="id">
-            <data type="NMTOKEN"/>
-          </attribute>
+          <optional>
+            <attribute name="id">
+              <data type="NMTOKEN"/>
+            </attribute>
+          </optional>
           <ref name="conref-atts"/>
           <ref name="select-atts"/>
           <ref name="localization-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcTrueFalse.element">
-          <element name="lcTrueFalse" dita:longName="True or false interaction">
+          <element name="lcTrueFalse" dita:longName="True or false interaction" dita:since="1.2">
             <a:documentation><![CDATA[A lcTrueFalse interaction presents the learner with two choices, one correct, the other incorrect, often presented as true/false or yes/no responses. ]]></a:documentation>
             <ref name="lcTrueFalse.attlist"/>
             <ref name="lcTrueFalse.content"/>
@@ -249,16 +239,16 @@ ORIGINAL CREATION DATE:
           <ref name="lcTrueFalse.attributes"/>
         </define>
       </div>
-
       <div>
+        <a:documentation>LONG NAME: Single selection interaction</a:documentation>
         <define name="lcSingleSelect.content">
           <optional>
-            <ref name="title"/>
+            <ref name="lcInteractionLabel"/>
           </optional>
           <ref name="lcQuestion"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcAsset"/>
-          </optional>
+          </zeroOrMore>
           <ref name="lcAnswerOptionGroup"/>
           <optional>
             <ref name="lcFeedbackIncorrect"/>
@@ -271,18 +261,17 @@ ORIGINAL CREATION DATE:
           </zeroOrMore>
         </define>
         <define name="lcSingleSelect.attributes">
-          <attribute name="id">
-            <data type="NMTOKEN"/>
-          </attribute>
+          <optional>
+            <attribute name="id">
+              <data type="NMTOKEN"/>
+            </attribute>
+          </optional>
           <ref name="conref-atts"/>
           <ref name="select-atts"/>
           <ref name="localization-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcSingleSelect.element">
-          <element name="lcSingleSelect" dita:longName="Single selection interaction">
+          <element name="lcSingleSelect" dita:longName="Single selection interaction" dita:since="1.2">
             <a:documentation><![CDATA[An lcSingleSelect interaction presents three or more choices, only one of which is correct. ]]></a:documentation>
             <ref name="lcSingleSelect.attlist"/>
             <ref name="lcSingleSelect.content"/>
@@ -293,14 +282,15 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Multiple selection interaction</a:documentation>
         <define name="lcMultipleSelect.content">
           <optional>
-            <ref name="title"/>
+            <ref name="lcInteractionLabel"/>
           </optional>
           <ref name="lcQuestion"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcAsset"/>
-          </optional>
+          </zeroOrMore>
           <ref name="lcAnswerOptionGroup"/>
           <optional>
             <ref name="lcFeedbackIncorrect"/>
@@ -313,18 +303,17 @@ ORIGINAL CREATION DATE:
           </zeroOrMore>
         </define>
         <define name="lcMultipleSelect.attributes">
-          <attribute name="id">
-            <data type="NMTOKEN"/>
-          </attribute>
+          <optional>
+            <attribute name="id">
+              <data type="NMTOKEN"/>
+            </attribute>
+          </optional>
           <ref name="conref-atts"/>
           <ref name="select-atts"/>
           <ref name="localization-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcMultipleSelect.element">
-          <element name="lcMultipleSelect" dita:longName="Multiple selection interaction">
+          <element name="lcMultipleSelect" dita:longName="Multiple selection interaction" dita:since="1.2">
             <a:documentation><![CDATA[In an lcMultipleSelect interaction, the learner must indicate two or more correct answers from a list of choices. ]]></a:documentation>
             <ref name="lcMultipleSelect.attlist"/>
             <ref name="lcMultipleSelect.content"/>
@@ -335,14 +324,15 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Sequencing interaction</a:documentation>
         <define name="lcSequencing.content">
           <optional>
-            <ref name="title"/>
+            <ref name="lcInteractionLabel"/>
           </optional>
           <ref name="lcQuestion"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcAsset"/>
-          </optional>
+          </zeroOrMore>
           <ref name="lcSequenceOptionGroup"/>
           <optional>
             <ref name="lcFeedbackIncorrect"/>
@@ -355,18 +345,17 @@ ORIGINAL CREATION DATE:
           </zeroOrMore>
         </define>
         <define name="lcSequencing.attributes">
-          <attribute name="id">
-            <data type="NMTOKEN"/>
-          </attribute>
+          <optional>
+            <attribute name="id">
+              <data type="NMTOKEN"/>
+            </attribute>
+          </optional>
           <ref name="conref-atts"/>
           <ref name="select-atts"/>
           <ref name="localization-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcSequencing.element">
-          <element name="lcSequencing" dita:longName="Sequencing interaction">
+          <element name="lcSequencing" dita:longName="Sequencing interaction" dita:since="1.2">
             <a:documentation><![CDATA[An lcSequencing interaction asks the learner to arrange a list of choices into a predefined order, such as small to large. ]]></a:documentation>
             <ref name="lcSequencing.attlist"/>
             <ref name="lcSequencing.content"/>
@@ -377,14 +366,15 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Matching interaction</a:documentation>
         <define name="lcMatching.content">
           <optional>
-            <ref name="title"/>
+            <ref name="lcInteractionLabel"/>
           </optional>
           <ref name="lcQuestion"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcAsset"/>
-          </optional>
+          </zeroOrMore>
           <ref name="lcMatchTable"/>
           <optional>
             <ref name="lcFeedbackIncorrect"/>
@@ -397,18 +387,17 @@ ORIGINAL CREATION DATE:
           </zeroOrMore>
         </define>
         <define name="lcMatching.attributes">
-          <attribute name="id">
-            <data type="NMTOKEN"/>
-          </attribute>
+          <optional>
+            <attribute name="id">
+              <data type="NMTOKEN"/>
+            </attribute>
+          </optional>
           <ref name="conref-atts"/>
           <ref name="select-atts"/>
           <ref name="localization-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcMatching.element">
-          <element name="lcMatching" dita:longName="Matching interaction">
+          <element name="lcMatching" dita:longName="Matching interaction" dita:since="1.2">
             <a:documentation><![CDATA[In an lcMatching interaction, the learner identifies the correct choice that matches another choice. ]]></a:documentation>
             <ref name="lcMatching.attlist"/>
             <ref name="lcMatching.content"/>
@@ -419,9 +408,10 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Hotspot interaction</a:documentation>
         <define name="lcHotspot.content">
           <optional>
-            <ref name="title"/>
+            <ref name="lcInteractionLabel"/>
           </optional>
           <ref name="lcQuestion"/>
           <ref name="lcHotspotMap"/>
@@ -436,18 +426,17 @@ ORIGINAL CREATION DATE:
           </zeroOrMore>
         </define>
         <define name="lcHotspot.attributes">
-          <attribute name="id">
-            <data type="NMTOKEN"/>
-          </attribute>
+          <optional>
+            <attribute name="id">
+              <data type="NMTOKEN"/>
+            </attribute>
+          </optional>
           <ref name="conref-atts"/>
           <ref name="select-atts"/>
           <ref name="localization-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcHotspot.element">
-          <element name="lcHotspot" dita:longName="Hotspot interaction">
+          <element name="lcHotspot" dita:longName="Hotspot interaction" dita:since="1.2">
             <a:documentation><![CDATA[In a lcHotspot interaction, the learner clicks on a region of the screen to indicate a choice. ]]></a:documentation>
             <ref name="lcHotspot.attlist"/>
             <ref name="lcHotspot.content"/>
@@ -456,17 +445,17 @@ ORIGINAL CREATION DATE:
         <define name="lcHotspot.attlist" combine="interleave">
           <ref name="lcHotspot.attributes"/>
         </define>
-
       </div>
       <div>
+        <a:documentation>LONG NAME: Open-ended question interaction</a:documentation>
         <define name="lcOpenQuestion.content">
           <optional>
-            <ref name="title"/>
+            <ref name="lcInteractionLabel"/>
           </optional>
           <ref name="lcQuestion"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcAsset"/>
-          </optional>
+          </zeroOrMore>
           <optional>
             <ref name="lcOpenAnswer"/>
           </optional>
@@ -481,19 +470,18 @@ ORIGINAL CREATION DATE:
           </zeroOrMore>
         </define>
         <define name="lcOpenQuestion.attributes">
-          <attribute name="id">
-            <data type="NMTOKEN"/>
-          </attribute>
+          <optional>
+            <attribute name="id">
+              <data type="NMTOKEN"/>
+            </attribute>
+          </optional>
           <ref name="conref-atts"/>
           <ref name="select-atts"/>
           <ref name="localization-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcOpenQuestion.element">
-          <element name="lcOpenQuestion" dita:longName="Open-ended question interaction">
-            <a:documentation><![CDATA[Use <lcOpenQuestion> to pose an open-ended question in an assessment interaction. ]]></a:documentation>
+          <element name="lcOpenQuestion" dita:longName="Open-ended question interaction" dita:since="1.2">
+            <a:documentation><![CDATA[Use <lcOpenQuestion2> to pose an open-ended question in an assessment interaction. ]]></a:documentation>
             <ref name="lcOpenQuestion.attlist"/>
             <ref name="lcOpenQuestion.content"/>
           </element>
@@ -506,20 +494,18 @@ ORIGINAL CREATION DATE:
     <div>
       <a:documentation>OPTION DEFINITIONS</a:documentation>
       <div>
+        <a:documentation>LONG NAME: Question (prompt)</a:documentation>
         <define name="lcQuestion.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcQuestion.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcQuestion.element">
-          <element name="lcQuestion" dita:longName="Question (prompt)">
-            <a:documentation><![CDATA[Use the <lcQuestion> element in an interaction to ask the question. ]]></a:documentation>
+          <element name="lcQuestion" dita:longName="Question (prompt)" dita:since="1.2">
+            <a:documentation><![CDATA[Use the <lcQuestion2> element in an interaction to ask the question. ]]></a:documentation>
             <ref name="lcQuestion.attlist"/>
             <ref name="lcQuestion.content"/>
           </element>
@@ -529,20 +515,18 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Open answer</a:documentation>
         <define name="lcOpenAnswer.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcOpenAnswer.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcOpenAnswer.element">
-          <element name="lcOpenAnswer" dita:longName="Open answer">
-            <a:documentation><![CDATA[Use <lcOpenAnswer> to provide a suggested answer for an <lcOpenQuestion> interaction. ]]></a:documentation>
+          <element name="lcOpenAnswer" dita:longName="Open answer" dita:since="1.2">
+            <a:documentation><![CDATA[Use <lcOpenAnswer2> to provide a suggested answer for an <lcOpenQuestion2> interaction. ]]></a:documentation>
             <ref name="lcOpenAnswer.attlist"/>
             <ref name="lcOpenAnswer.content"/>
           </element>
@@ -552,11 +536,11 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Answer option group</a:documentation>
         <define name="lcAnswerOptionGroup.content">
-          <zeroOrMore dita:since="1.3">
+          <zeroOrMore>
             <choice>
               <ref name="data"/>
-              <ref name="data-about"/>
             </choice>
           </zeroOrMore>
           <oneOrMore>
@@ -565,13 +549,10 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcAnswerOptionGroup.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcAnswerOptionGroup.element">
-          <a:documentation><![CDATA[The <lcAnswerOptionGroup> element provides a container for the options for a true-false, single-select, or multiple-select assessment interaction. ]]></a:documentation>
-          <element name="lcAnswerOptionGroup" dita:longName="Answer option group">
+          <a:documentation><![CDATA[The <lcAnswerOptionGroup2> element provides a container for the options for a true-false, single-select, or multiple-select assessment interaction. ]]></a:documentation>
+          <element name="lcAnswerOptionGroup" dita:longName="Answer option group" dita:since="1.2">
             <ref name="lcAnswerOptionGroup.attlist"/>
             <ref name="lcAnswerOptionGroup.content"/>
           </element>
@@ -581,11 +562,11 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Sequence option group</a:documentation>
         <define name="lcSequenceOptionGroup.content">
-          <zeroOrMore dita:since="1.3">
+          <zeroOrMore>
             <choice>
               <ref name="data"/>
-              <ref name="data-about"/>
             </choice>
           </zeroOrMore>
           <oneOrMore>
@@ -594,13 +575,10 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcSequenceOptionGroup.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcSequenceOptionGroup.element">
-          <element name="lcSequenceOptionGroup" dita:longName="Sequence option group">
-            <a:documentation><![CDATA[The <lcSequenceOptionGroup> element provides the options for an assessment sequence interaction. ]]></a:documentation>
+          <element name="lcSequenceOptionGroup" dita:longName="Sequence option group" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcSequenceOptionGroup2> element provides the options for an assessment sequence interaction. ]]></a:documentation>
             <ref name="lcSequenceOptionGroup.attlist"/>
             <ref name="lcSequenceOptionGroup.content"/>
           </element>
@@ -610,6 +588,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Interaction asset</a:documentation>
         <define name="lcAsset.content">
           <zeroOrMore>
             <choice>
@@ -621,13 +600,10 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcAsset.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcAsset.element">
-          <element name="lcAsset" dita:longName="Interaction asset">
-            <a:documentation><![CDATA[The <lcAsset> element in an assessment interaction provides the images or other graphic assets to support the interaction. ]]></a:documentation>
+          <element name="lcAsset" dita:longName="Interaction asset" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcAsset2> element in an assessment interaction provides the images or other graphic assets to support the interaction. ]]></a:documentation>
             <ref name="lcAsset.attlist"/>
             <ref name="lcAsset.content"/>
           </element>
@@ -637,19 +613,17 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Sequence option</a:documentation>
         <define name="lcSequenceOption.content">
           <ref name="lcAnswerContent"/>
           <ref name="lcSequence"/>
         </define>
         <define name="lcSequenceOption.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcSequenceOption.element">
-          <element name="lcSequenceOption" dita:longName="Sequence option">
-            <a:documentation><![CDATA[The <lcSequenceOption> element in an assessment interaction provides the contents of an item in a sequence interaction. ]]></a:documentation>
+          <element name="lcSequenceOption" dita:longName="Sequence option" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcSequenceOption2> element in an assessment interaction provides the contents of an item in a sequence interaction. ]]></a:documentation>
             <ref name="lcSequenceOption.attlist"/>
             <ref name="lcSequenceOption.content"/>
           </element>
@@ -659,20 +633,18 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Feedback</a:documentation>
         <define name="lcFeedback.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcFeedback.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcFeedback.element">
-          <element name="lcFeedback" dita:longName="Feedback">
-            <a:documentation><![CDATA[The <lcFeedback> element in an assessment interaction provides information to the learner about a correct or incorrect response. ]]></a:documentation>
+          <element name="lcFeedback" dita:longName="Feedback" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcFeedback2> element in an assessment interaction provides information to the learner about a correct or incorrect response. ]]></a:documentation>
             <ref name="lcFeedback.attlist"/>
             <ref name="lcFeedback.content"/>
           </element>
@@ -682,20 +654,18 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Correct-response feedback</a:documentation>
         <define name="lcFeedbackCorrect.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcFeedbackCorrect.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcFeedbackCorrect.element">
-          <element name="lcFeedbackCorrect" dita:longName="Correct-response feedback">
-            <a:documentation><![CDATA[The <lcFeedbackCorrect> element in an assessment interaction provides feedback to the learner about a correct response. ]]></a:documentation>
+          <element name="lcFeedbackCorrect" dita:longName="Correct-response feedback" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcFeedbackCorrect2> element in an assessment interaction provides feedback to the learner about a correct response. ]]></a:documentation>
             <ref name="lcFeedbackCorrect.attlist"/>
             <ref name="lcFeedbackCorrect.content"/>
           </element>
@@ -705,20 +675,18 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Incorrect-response feedback</a:documentation>
         <define name="lcFeedbackIncorrect.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcFeedbackIncorrect.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcFeedbackIncorrect.element">
-          <element name="lcFeedbackIncorrect" dita:longName="Incorrect-response feedback">
-            <a:documentation><![CDATA[The <lcFeedbackIncorrect> element in an assessment interaction provides feedback about incorrect response. ]]></a:documentation>
+          <element name="lcFeedbackIncorrect" dita:longName="Incorrect-response feedback" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcFeedbackIncorrect2> element in an assessment interaction provides feedback about incorrect response. ]]></a:documentation>
             <ref name="lcFeedbackIncorrect.attlist"/>
             <ref name="lcFeedbackIncorrect.content"/>
           </element>
@@ -728,6 +696,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Answer option</a:documentation>
         <define name="lcAnswerOption.content">
           <ref name="lcAnswerContent"/>
           <optional>
@@ -739,13 +708,10 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcAnswerOption.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcAnswerOption.element">
-          <element name="lcAnswerOption" dita:longName="Answer option">
-            <a:documentation><![CDATA[The <lcAnswerOption> element in an assessment interaction provides the content and feedback for a question option, and can indicate the correct option. ]]></a:documentation>
+          <element name="lcAnswerOption" dita:longName="Answer option" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcAnswerOption2> element in an assessment interaction provides the content and feedback for a question option, and can indicate the correct option. ]]></a:documentation>
             <ref name="lcAnswerOption.attlist"/>
             <ref name="lcAnswerOption.content"/>
           </element>
@@ -755,20 +721,18 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Answer content</a:documentation>
         <define name="lcAnswerContent.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcAnswerContent.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcAnswerContent.element">
-          <element name="lcAnswerContent" dita:longName="Answer content">
-            <a:documentation><![CDATA[The <lcAnswerContent> element in a learning assessment interaction provides the content for an answer option, which the learner can select as correct or incorrect. ]]></a:documentation>
+          <element name="lcAnswerContent" dita:longName="Answer content" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcAnswerContent2> element in a learning assessment interaction provides the content for an answer option, which the learner can select as correct or incorrect. ]]></a:documentation>
             <ref name="lcAnswerContent.attlist"/>
             <ref name="lcAnswerContent.content"/>
           </element>
@@ -778,6 +742,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Matching table</a:documentation>
         <define name="lcMatchTable.content">
           <optional>
             <ref name="lcMatchingHeader"/>
@@ -788,13 +753,10 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcMatchTable.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcMatchTable.element">
-          <element name="lcMatchTable" dita:longName="Matching table">
-            <a:documentation><![CDATA[The <lcMatchTable> element in an assessment interaction provides a format for matching items. ]]></a:documentation>
+          <element name="lcMatchTable" dita:longName="Matching table" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcMatchTable2> element in an assessment interaction provides a format for matching items. ]]></a:documentation>
             <ref name="lcMatchTable.attlist"/>
             <ref name="lcMatchTable.content"/>
           </element>
@@ -804,19 +766,17 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Matching table header</a:documentation>
         <define name="lcMatchingHeader.content">
           <ref name="lcItem"/>
           <ref name="lcMatchingItem"/>
         </define>
         <define name="lcMatchingHeader.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcMatchingHeader.element">
-          <element name="lcMatchingHeader" dita:longName="Matching table header">
-            <a:documentation><![CDATA[The <lcMatchingHeader> element in an assessment interaction provides column headings for items to present in a matching table. ]]></a:documentation>
+          <element name="lcMatchingHeader" dita:longName="Matching table header" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcMatchingHeader2> element in an assessment interaction provides column headings for items to present in a matching table. ]]></a:documentation>
             <ref name="lcMatchingHeader.attlist"/>
             <ref name="lcMatchingHeader.content"/>
           </element>
@@ -826,6 +786,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Matching assessment pair</a:documentation>
         <define name="lcMatchingPair.content">
           <ref name="lcItem"/>
           <ref name="lcMatchingItem"/>
@@ -835,13 +796,10 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcMatchingPair.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcMatchingPair.element">
-          <element name="lcMatchingPair" dita:longName="Matching assessment pair">
-            <a:documentation><![CDATA[The <lcMatchingPair> element in an assessment interaction provides a table row with the pair of items that comprise a correct match in a matching interaction. ]]></a:documentation>
+          <element name="lcMatchingPair" dita:longName="Matching assessment pair" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcMatchingPair2> element in an assessment interaction provides a table row with the pair of items that comprise a correct match in a matching interaction. ]]></a:documentation>
             <ref name="lcMatchingPair.attlist"/>
             <ref name="lcMatchingPair.content"/>
           </element>
@@ -851,20 +809,18 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Item to be matched</a:documentation>
         <define name="lcItem.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcItem.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcItem.element">
-          <element name="lcItem" dita:longName="Item to be matched">
-            <a:documentation><![CDATA[The <lcItem> element in an assessment interaction provides the content for an item that matches the match item in a match table. ]]></a:documentation>
+          <element name="lcItem" dita:longName="Item to be matched" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcItem2> element in an assessment interaction provides the content for an item that matches the match item in a match table. ]]></a:documentation>
             <ref name="lcItem.attlist"/>
             <ref name="lcItem.content"/>
           </element>
@@ -874,20 +830,18 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Matching item</a:documentation>
         <define name="lcMatchingItem.content">
           <zeroOrMore>
-            <ref name="ph.cnt"/>
+            <ref name="div.cnt"/>
           </zeroOrMore>
         </define>
         <define name="lcMatchingItem.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcMatchingItem.element">
-          <element name="lcMatchingItem" dita:longName="Matching item">
-            <a:documentation><![CDATA[The <lcMatchingItem> element in an assessment interaction provides the content for the matching side of a matching pair of items in a match table interaction. ]]></a:documentation>
+          <element name="lcMatchingItem" dita:longName="Matching item" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcMatchingItem2> element in an assessment interaction provides the content for the matching side of a matching pair of items in a match table interaction. ]]></a:documentation>
             <ref name="lcMatchingItem.attlist"/>
             <ref name="lcMatchingItem.content"/>
           </element>
@@ -897,6 +851,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Matching item feedback</a:documentation>
         <define name="lcMatchingItemFeedback.content">
           <zeroOrMore>
             <choice>
@@ -908,12 +863,9 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcMatchingItemFeedback.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcMatchingItemFeedback.element">
-          <element name="lcMatchingItemFeedback" dita:longName="Matching item feedback">
+          <element name="lcMatchingItemFeedback" dita:longName="Matching item feedback" dita:since="1.2">
             <a:documentation>???</a:documentation>
             <ref name="lcMatchingItemFeedback.attlist"/>
             <ref name="lcMatchingItemFeedback.content"/>
@@ -924,6 +876,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Hot spot map interaction</a:documentation>
         <define name="lcHotspotMap.content">
           <ref name="image"/>
           <oneOrMore>
@@ -932,12 +885,9 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcHotspotMap.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcHotspotMap.element">
-          <element name="lcHotspotMap" dita:longName="Hot spot map interaction">
+          <element name="lcHotspotMap" dita:longName="Hot spot map interaction" dita:since="1.2">
             <a:documentation><![CDATA[A lcHotspotMap interaction lets you designate an action area or region over an image, allowing a click in that region to get scored as correct or incorrect in respoinse to an interaction question. ]]></a:documentation>
             <ref name="lcHotspotMap.attlist"/>
             <ref name="lcHotspotMap.content"/>
@@ -948,6 +898,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Hotspot area</a:documentation>
         <define name="lcArea.content">
           <ref name="lcAreaShape"/>
           <ref name="lcAreaCoords"/>
@@ -963,12 +914,9 @@ ORIGINAL CREATION DATE:
         </define>
         <define name="lcArea.attributes">
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcArea.element">
-          <element name="lcArea" dita:longName="Hotspot area">
+          <element name="lcArea" dita:longName="Hotspot area" dita:since="1.2">
             <a:documentation><![CDATA[A lcArea defines an area of a hotspot image that contains a correct or incorrect choice in a hotspot assessment interaction. ]]></a:documentation>
             <ref name="lcArea.attlist"/>
             <ref name="lcArea.content"/>
@@ -978,67 +926,61 @@ ORIGINAL CREATION DATE:
           <ref name="lcArea.attributes"/>
         </define>
       </div>
-    </div>
-    <div>
-      <a:documentation> LONG NAME: Shape of the Hotspot </a:documentation>
-      <define name="lcAreaShape.content">
-        <zeroOrMore>
-          <choice>
-            <text/>
-            <ref name="text"/>
-          </choice>
-        </zeroOrMore>
-      </define>
-      <define name="lcAreaShape.attributes">
-        <optional>
-          <attribute name="keyref"/>
-        </optional>
-        <ref name="univ-atts-translate-no"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
-      <define name="lcAreaShape.element">
-        <element name="lcAreaShape" dita:longName="Hotspot area shape">
-          <ref name="lcAreaShape.attlist"/>
-          <ref name="lcAreaShape.content"/>
-        </element>
-      </define>
-      <define name="lcAreaShape.attlist" combine="interleave">
-        <ref name="lcAreaShape.attributes"/>
-      </define>
+      <div>
+        <a:documentation>LONG NAME: Hotspot area shape</a:documentation>
+        <define name="lcAreaShape.content">
+          <zeroOrMore>
+            <choice>
+              <text/>
+              <ref name="text"/>
+            </choice>
+          </zeroOrMore>
+        </define>
+        <define name="lcAreaShape.attributes">
+          <optional>
+            <attribute name="keyref"/>
+          </optional>
+          <ref name="univ-atts-translate-no"/>
+     </define>
+        <define name="lcAreaShape.element">
+          <element name="lcAreaShape" dita:longName="Hotspot area shape" dita:since="1.2">
+            <ref name="lcAreaShape.attlist"/>
+            <ref name="lcAreaShape.content"/>
+          </element>
+        </define>
+        <define name="lcAreaShape.attlist" combine="interleave">
+          <ref name="lcAreaShape.attributes"/>
+        </define>
 
-    </div>
-    <div>
-      <a:documentation> LONG NAME: Coordinates of the Hotspot </a:documentation>
-      <define name="lcAreaCoords.content">
-        <zeroOrMore>
-          <ref name="words.cnt"/>
-        </zeroOrMore>
-      </define>
-      <define name="lcAreaCoords.attributes">
-        <optional>
-          <attribute name="keyref"/>
-        </optional>
-        <ref name="univ-atts-translate-no"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
-      <define name="lcAreaCoords.element">
-        <element name="lcAreaCoords" dita:longName="Hotspot area coordinates">
-          <ref name="lcAreaCoords.attlist"/>
-          <ref name="lcAreaCoords.content"/>
-        </element>
-      </define>
-      <define name="lcAreaCoords.attlist" combine="interleave">
-        <ref name="lcAreaCoords.attributes"/>
-      </define>
-
+      </div>
+      <div>
+        <a:documentation> LONG NAME: Hotspot area coordinates</a:documentation>
+        <define name="lcAreaCoords.content">
+          <zeroOrMore>
+            <ref name="words.cnt"/>
+          </zeroOrMore>
+        </define>
+        <define name="lcAreaCoords.attributes">
+          <optional>
+            <attribute name="keyref"/>
+          </optional>
+          <ref name="univ-atts-translate-no"/>
+     </define>
+        <define name="lcAreaCoords.element">
+          <element name="lcAreaCoords" dita:longName="Hotspot area coordinates" dita:since="1.2">
+            <ref name="lcAreaCoords.attlist"/>
+            <ref name="lcAreaCoords.content"/>
+          </element>
+        </define>
+        <define name="lcAreaCoords.attlist" combine="interleave">
+          <ref name="lcAreaCoords.attributes"/>
+        </define>
+      </div>
     </div>
     <div>
       <a:documentation>CHOICE DEFINITIONS</a:documentation>
       <div>
+        <a:documentation>LONG NAME: Correct response</a:documentation>
         <define name="lcCorrectResponse.content">
           <empty/>
         </define>
@@ -1050,13 +992,10 @@ ORIGINAL CREATION DATE:
             <attribute name="value" a:defaultValue="lcCorrectResponse"/>
           </optional>
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcCorrectResponse.element">
-          <element name="lcCorrectResponse" dita:longName="Correct response">
-            <a:documentation><![CDATA[The <lcCorrectResponse> element in an assessment interaction indicates a correct response. ]]></a:documentation>
+          <element name="lcCorrectResponse" dita:longName="Correct response" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcCorrectResponse2> element in an assessment interaction indicates a correct response. ]]></a:documentation>
             <ref name="lcCorrectResponse.attlist"/>
             <ref name="lcCorrectResponse.content"/>
           </element>
@@ -1066,6 +1005,7 @@ ORIGINAL CREATION DATE:
         </define>
       </div>
       <div>
+        <a:documentation>LONG NAME: Sequence position</a:documentation>
         <define name="lcSequence.content">
           <empty/>
         </define>
@@ -1075,13 +1015,10 @@ ORIGINAL CREATION DATE:
           </optional>
           <attribute name="value"/>
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-        </define>
+     </define>
         <define name="lcSequence.element">
-          <element name="lcSequence" dita:longName="Sequence interaction">
-            <a:documentation><![CDATA[The <lcSequence> element in an assessment interaction provides the position of a sequence option in a sequence. ]]></a:documentation>
+          <element name="lcSequence" dita:longName="Sequence position" dita:since="1.2">
+            <a:documentation><![CDATA[The <lcSequence2> element in an assessment interaction provides the position of a sequence option in a sequence. ]]></a:documentation>
             <ref name="lcSequence.attlist"/>
             <ref name="lcSequence.content"/>
           </element>
@@ -1094,188 +1031,158 @@ ORIGINAL CREATION DATE:
   </div>
   <div>
     <a:documentation>SPECIALIZATION ATTRIBUTE DECLARATIONS</a:documentation>
+
     <define name="lcInstructornote.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/note learningInteractionBase-d/note learning-d/lcInstructornote "/>
       </optional>
     </define>
     <define name="lcTrueFalse.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcTrueFalse "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcTrueFalse "/>
       </optional>
     </define>
     <define name="lcSingleSelect.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcSingleSelect "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcSingleSelect "/>
       </optional>
     </define>
     <define name="lcMultipleSelect.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcMultipleSelect "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcMultipleSelect "/>
       </optional>
     </define>
     <define name="lcSequencing.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcSequencing "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcSequencing "/>
       </optional>
     </define>
     <define name="lcMatching.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcMatching "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcMatching "/>
       </optional>
     </define>
     <define name="lcHotspot.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcHotspot "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcHotspot "/>
       </optional>
     </define>
     <define name="lcOpenQuestion.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcOpenQuestion "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcOpenQuestion "/>
       </optional>
     </define>
     <define name="lcQuestion.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/p learningInteractionBase-d/lcQuestionBase learning-d/lcQuestion "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/lcQuestionBase learning-d/lcQuestion "/>
       </optional>
     </define>
     <define name="lcOpenAnswer.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/p learningInteractionBase-d/p learning-d/lcOpenAnswer "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/div learning-d/lcOpenAnswer "/>
       </optional>
     </define>
     <define name="lcAsset.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/p learningInteractionBase-d/p learning-d/lcAsset "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/div learning-d/lcAsset "/>
       </optional>
     </define>
     <define name="lcFeedback.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/p learningInteractionBase-d/p learning-d/lcFeedback "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/div learning-d/lcFeedback "/>
       </optional>
     </define>
     <define name="lcFeedbackCorrect.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/p learningInteractionBase-d/p learning-d/lcFeedbackCorrect "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/div learning-d/lcFeedbackCorrect "/>
       </optional>
     </define>
     <define name="lcFeedbackIncorrect.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/p learningInteractionBase-d/p learning-d/lcFeedbackIncorrect "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/div learning-d/lcFeedbackIncorrect "/>
       </optional>
     </define>
     <define name="lcAnswerOption.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/li learningInteractionBase-d/li learning-d/lcAnswerOption "/>
       </optional>
     </define>
     <define name="lcAnswerOptionGroup.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/ul learningInteractionBase-d/ul learning-d/lcAnswerOptionGroup "/>
       </optional>
     </define>
     <define name="lcAnswerContent.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
-        <attribute name="class" a:defaultValue="+ topic/p learningInteractionBase-d/p learning-d/lcAnswerContent "/>
+        <attribute name="class" a:defaultValue="+ topic/div learningInteractionBase-d/div learning-d/lcAnswerContent "/>
       </optional>
     </define>
     <define name="lcMatchTable.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/simpletable learningInteractionBase-d/simpletable learning-d/lcMatchTable "/>
       </optional>
     </define>
     <define name="lcMatchingHeader.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/sthead learningInteractionBase-d/sthead learning-d/lcMatchingHeader "/>
       </optional>
     </define>
     <define name="lcMatchingPair.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/strow learningInteractionBase-d/strow learning-d/lcMatchingPair "/>
       </optional>
     </define>
     <define name="lcItem.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/stentry learningInteractionBase-d/stentry learning-d/lcItem "/>
       </optional>
     </define>
     <define name="lcMatchingItem.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/stentry learningInteractionBase-d/stentry learning-d/lcMatchingItem "/>
       </optional>
     </define>
     <define name="lcMatchingItemFeedback.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/stentry learningInteractionBase-d/stentry learning-d/lcMatchingItemFeedback "/>
       </optional>
     </define>
     <define name="lcSequenceOptionGroup.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/ol learningInteractionBase-d/ol learning-d/lcSequenceOptionGroup "/>
       </optional>
     </define>
     <define name="lcSequenceOption.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/li learningInteractionBase-d/li learning-d/lcSequenceOption "/>
       </optional>
     </define>
     <define name="lcSequence.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningInteractionBase-d/data learning-d/lcSequence "/>
       </optional>
     </define>
     <define name="lcCorrectResponse.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningInteractionBase-d/data learning-d/lcCorrectResponse "/>
       </optional>
     </define>
     <define name="lcHotspotMap.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/fig learningInteractionBase-d/figgroup learning-d/lcHotspotMap "/>
       </optional>
     </define>
     <define name="lcArea.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/figgroup learningInteractionBase-d/figgroup learning-d/lcArea "/>
       </optional>
     </define>
     <define name="lcAreaShape.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/keyword learningInteractionBase-d/keyword learning-d/lcAreaShape "/>
       </optional>
     </define>
     <define name="lcAreaCoords.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/ph learningInteractionBase-d/ph learning-d/lcAreaCoords "/>
       </optional>

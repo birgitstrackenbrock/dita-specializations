@@ -11,8 +11,8 @@
                    HEADER                                    
 =============================================================
  MODULE:    DITA Learning Metadata Domain                    
- VERSION:   1.2                                              
- DATE:      November 2009                                    
+ VERSION:   2.0                                       
+ DATE:      November 2023                                    
                                                              
 =============================================================
 
@@ -22,8 +22,8 @@
                                                              
  Refer to this file by the following public identfier or an 
       appropriate system identifier 
-PUBLIC "-//OASIS//ELEMENTS DITA Learning Metadata Domain//EN"
-      Delivered as file "learningMetadataDomain.mod"              
+      
+urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningMetadataDomain.rng:2.0
 
 =============================================================
 SYSTEM:     Darwin Information Typing Architecture (DITA)    
@@ -34,8 +34,12 @@ PURPOSE:    Declaring the elements and specialization
 ORIGINAL CREATION DATE:                                      
             May 2007                                         
                                                              
-            (C) Copyright OASIS Open 2007, 2009.             
-            All Rights Reserved.                             
+            (C) Copyright OASIS Open 2007, 2023.             
+            All Rights Reserved.       
+            
+UPDATES:                                                    
+   2023.11.05 WEK: Updated for DITA 2.0.
+            
 =============================================================
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 - LOM Metadata
@@ -48,11 +52,10 @@ ORIGINAL CREATION DATE:
       <modulePublicIds>
         <dtdMod>-//OASIS//ELEMENTS DITA<var presep=" " name="ditaver"/> Learning Metadata Domain//EN</dtdMod>
         <dtdEnt>-//OASIS//ENTITIES DITA<var presep=" " name="ditaver"/> Learning Metadata Domain//EN</dtdEnt>
-        <xsdMod>urn:oasis:names:tc:dita:spec:learning:xsd:learningMetadataDomain.xsd<var presep=":" name="ditaver"/></xsdMod>
-        <rncMod>urn:oasis:names:tc:dita:spec:learning:rnc:learningMetadataDomain.rnc<var presep=":" name="ditaver"/></rncMod>
-        <rngMod>urn:oasis:names:tc:dita:spec:learning:rng:learningMetadataDomain.rng<var presep=":" name="ditaver"/></rngMod>
+        <xsdMod>urn:pubid:oasis:names:tc:dita:spec:learning:xsd:learningMetadataDomain.xsd<var presep=":" name="ditaver"/></xsdMod>
+        <rncMod>urn:pubid:oasis:names:tc:dita:spec:learning:rnc:learningMetadataDomain.rnc<var presep=":" name="ditaver"/></rncMod>
+        <rngMod>urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningMetadataDomain.rng<var presep=":" name="ditaver"/></rngMod>
       </modulePublicIds>
-      <domainsContribution>(topic learningmeta-d)</domainsContribution>
     </moduleMetadata>
   </moduleDesc>
   <div>
@@ -281,10 +284,7 @@ ORIGINAL CREATION DATE:
             <attribute name="datatype" a:defaultValue=""/>
           </optional>
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-          <attribute name="value">
+     <attribute name="value">
             <choice>
               <value>1</value>
               <value>2</value>
@@ -323,10 +323,7 @@ ORIGINAL CREATION DATE:
             <attribute name="datatype" a:defaultValue=""/>
           </optional>
           <ref name="univ-atts"/>
-          <optional>
-            <attribute name="outputclass"/>
-          </optional>
-          <attribute name="value">
+     <attribute name="value">
             <choice>
               <value>pc-dos</value>
               <value>ms-windows</value>
@@ -775,101 +772,85 @@ ORIGINAL CREATION DATE:
   <div>
     <a:documentation> SPECIALIZATION ATTRIBUTE DECLARATIONS </a:documentation>
     <define name="lcLom.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/metadata learningmeta-d/lcLom "/>
       </optional>
     </define>
     <define name="lomCoverage.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomCoverage "/>
       </optional>
     </define>
     <define name="lomStructure.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomStructure "/>
       </optional>
     </define>
     <define name="lomAggregationLevel.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomAggregationLevel "/>
       </optional>
     </define>
     <define name="lomTechRequirement.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomTechRequirement "/>
       </optional>
     </define>
     <define name="lomInstallationRemarks.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomInstallationRemarks "
         />
       </optional>
     </define>
     <define name="lomOtherPlatformRequirements.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class"
           a:defaultValue="+ topic/data learningmeta-d/lomOtherPlatformRequirements "/>
       </optional>
     </define>
     <define name="lomInteractivityType.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomInteractivityType "/>
       </optional>
     </define>
     <define name="lomLearningResourceType.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class"
           a:defaultValue="+ topic/data learningmeta-d/lomLearningResourceType "/>
       </optional>
     </define>
     <define name="lomInteractivityLevel.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomInteractivityLevel "
         />
       </optional>
     </define>
     <define name="lomSemanticDensity.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomSemanticDensity "/>
       </optional>
     </define>
     <define name="lomIntendedUserRole.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomIntendedUserRole "/>
       </optional>
     </define>
     <define name="lomContext.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomContext "/>
       </optional>
     </define>
     <define name="lomTypicalAgeRange.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomTypicalAgeRange "/>
       </optional>
     </define>
     <define name="lomDifficulty.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomDifficulty "/>
       </optional>
     </define>
     <define name="lomTypicalLearningTime.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="+ topic/data learningmeta-d/lomTypicalLearningTime "
         />

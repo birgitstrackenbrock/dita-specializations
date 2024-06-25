@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE learningGroupMap PUBLIC "-//OASIS//DTD DITA 2.0 Learning Group Map//EN" "learningGroupMap.dtd">
+<learningGroupMap id="test-learningGroupMap-2-0">
+    <title>Test Learning Group Map 2.0</title>
+  <learningGroup>
+    <learningObjectMapRef></learningObjectMapRef>
+    <learningObject>
+      <learningContentRef></learningContentRef>
+    </learningObject>
+    <learningPostAssessmentRef></learningPostAssessmentRef>
+    <learningSummaryRef></learningSummaryRef>
+  </learningGroup>
+  <learningObjectMapRef></learningObjectMapRef>
+</learningGroupMap>

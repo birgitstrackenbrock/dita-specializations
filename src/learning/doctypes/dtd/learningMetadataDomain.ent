@@ -3,7 +3,7 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA Learning Metadata Domain                     -->
-<!--  VERSION:   1.2                                               -->
+<!--  VERSION:   2.0                                               -->
 <!--  DATE:      November 2009                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
@@ -14,7 +14,7 @@
 <!--  Refer to this file by the following public identfier or an   -->
 <!--       appropriate system identifier                           -->
 <!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Metadata Domain//EN" -->
-<!--       Delivered as file "learningMetadataDomain.mod"               -->
+<!--       Delivered as file "learningMetadataDomain.mod"          -->
 <!-- ============================================================= -->
 <!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
 <!--                                                               -->
@@ -24,7 +24,7 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             May 2007                                          -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009.              -->
+<!--             (C) Copyright OASIS Open 2007, 2023.              -->
 <!--             All Rights Reserved.                              -->
 <!-- ============================================================= -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -43,10 +43,6 @@
 <!-- ============================================================= -->
 <!--                    DOMAIN ENTITY DECLARATION                  -->
 <!-- ============================================================= -->
-
-<!ENTITY learningmeta-d-att
-  "(topic learningmeta-d)"
->
 
 <!-- ================ End DITA Learning Metadata Domain ================== -->
  

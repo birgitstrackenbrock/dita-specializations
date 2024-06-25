@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE learningContent PUBLIC "-//OASIS//DTD DITA 2.0 Learning Content//EN" "learningContent.dtd">
+<learningContent id="test-content-2-0">
+    <title>Test Learning Content 2.0</title>
+    <shortdesc></shortdesc>
+  <prolog>
+    <titlealt title-role="navtitle"></titlealt>
+  </prolog>
+  <learningContentbody>
+    <lcIntro id="lcIntro_ydb_gk2_pzb">
+      <p>Introduction.</p>
+    </lcIntro>
+  </learningContentbody>
+</learningContent>

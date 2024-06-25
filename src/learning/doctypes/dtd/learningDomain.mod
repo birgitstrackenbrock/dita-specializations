@@ -3,8 +3,8 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA Learning Domain                              -->
-<!--  VERSION:   1.2                                               -->
-<!--  DATE:      November 2009                                     -->
+<!--  VERSION:   2.0                                               -->
+<!--  DATE:      November 2023                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
 <!-- ============================================================= -->
@@ -14,7 +14,6 @@
 <!--  Refer to this file by the following public identfier or an   -->
 <!--       appropriate system identifier                           -->
 <!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Domain//EN"          -->
-<!--       Delivered as file "learningDomain.mod"                      -->
 <!-- ============================================================= -->
 <!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
 <!--                                                               -->
@@ -22,73 +21,71 @@
 <!--             attributes for Learning Domain                    -->
 <!--                                                               -->
 <!-- ORIGINAL CREATION DATE:                                       -->
-<!--             May 2007                                          -->
+<!--             November 2023                                     -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009.              -->
+<!--             (C) Copyright OASIS Open 2014, 2023               -->
 <!--             All Rights Reserved.                              -->
 <!--                                                               -->
-<!--  CHANGE LOG:                                                  -->
-<!--                                                               -->
-<!--    Sept 2009: WEK: added lcMatchingItemFeedback per           -->
-<!--    TC decision.                                               -->
-<!-- =============================================================   -->
+<!-- ============================================================= -->
 
 <!-- ============================================================= -->
 <!--                   ELEMENT NAME ENTITIES                       -->
 <!-- ============================================================= -->
 
 <!ENTITY % lcInstructornote
-                       "lcInstructornote"                            >
-<!ENTITY % lcTrueFalse "lcTrueFalse"                                 >
+                       "lcInstructornote"                           >
+<!ENTITY % lcTrueFalse
+                       "lcTrueFalse"                                >
 <!ENTITY % lcSingleSelect
-                       "lcSingleSelect"                              >
+                       "lcSingleSelect"                             >
 <!ENTITY % lcMultipleSelect
-                       "lcMultipleSelect"                            >
+                       "lcMultipleSelect"                           >
 <!ENTITY % lcSequencing
-                       "lcSequencing"                                >
-<!ENTITY % lcMatching  "lcMatching"                                  >
-<!ENTITY % lcHotspot   "lcHotspot"                                   >
+                       "lcSequencing"                               >
+<!ENTITY % lcMatching  "lcMatching"                                 >
+<!ENTITY % lcHotspot   "lcHotspot"                                  >
 <!ENTITY % lcOpenQuestion
-                       "lcOpenQuestion"                              >
-<!ENTITY % lcQuestion  "lcQuestion"                                  >
+                       "lcOpenQuestion"                             >
+<!ENTITY % lcQuestion  "lcQuestion"                                 >
 <!ENTITY % lcOpenAnswer
-                       "lcOpenAnswer"                                >
+                       "lcOpenAnswer"                               >
 <!ENTITY % lcAnswerOptionGroup
-                       "lcAnswerOptionGroup"                         >
+                       "lcAnswerOptionGroup"                        >
 <!ENTITY % lcSequenceOptionGroup
-                       "lcSequenceOptionGroup"                       >
-<!ENTITY % lcAsset     "lcAsset"                                     >
+                       "lcSequenceOptionGroup"                      >
+<!ENTITY % lcAsset     "lcAsset"                                    >
 <!ENTITY % lcSequenceOption
-                       "lcSequenceOption"                            >
-<!ENTITY % lcFeedback  "lcFeedback"                                  >
+                       "lcSequenceOption"                           >
+<!ENTITY % lcFeedback  "lcFeedback"                                 >
 <!ENTITY % lcFeedbackCorrect
-                       "lcFeedbackCorrect"                           >
+                       "lcFeedbackCorrect"                          >
 <!ENTITY % lcFeedbackIncorrect
-                       "lcFeedbackIncorrect"                         >
+                       "lcFeedbackIncorrect"                        >
 <!ENTITY % lcAnswerOption
-                       "lcAnswerOption"                              >
+                       "lcAnswerOption"                             >
 <!ENTITY % lcAnswerContent
-                       "lcAnswerContent"                             >
+                       "lcAnswerContent"                            >
 <!ENTITY % lcMatchTable
-                       "lcMatchTable"                                >
+                       "lcMatchTable"                               >
 <!ENTITY % lcMatchingHeader
-                       "lcMatchingHeader"                            >
+                       "lcMatchingHeader"                           >
 <!ENTITY % lcMatchingPair
-                       "lcMatchingPair"                              >
-<!ENTITY % lcItem      "lcItem"                                      >
+                       "lcMatchingPair"                             >
+<!ENTITY % lcItem      "lcItem"                                     >
 <!ENTITY % lcMatchingItem
-                       "lcMatchingItem"                              >
+                       "lcMatchingItem"                             >
 <!ENTITY % lcMatchingItemFeedback
-                       "lcMatchingItemFeedback"                      >
+                       "lcMatchingItemFeedback"                     >
 <!ENTITY % lcHotspotMap
-                       "lcHotspotMap"                                >
-<!ENTITY % lcArea      "lcArea"                                      >
-<!ENTITY % lcAreaShape "lcAreaShape"                                 >
+                       "lcHotspotMap"                               >
+<!ENTITY % lcArea      "lcArea"                                     >
+<!ENTITY % lcAreaShape
+                       "lcAreaShape"                                >
 <!ENTITY % lcAreaCoords
-                       "lcAreaCoords"                                >
+                       "lcAreaCoords"                               >
 <!ENTITY % lcCorrectResponse
-                       "lcCorrectResponse"                           >
-<!ENTITY % lcSequence  "lcSequence"                                  >
+                       "lcCorrectResponse"                          >
+<!ENTITY % lcSequence  "lcSequence"                                 >
 
 <!-- ============================================================= -->
 <!--                    ELEMENT DECLARATIONS                       -->
@@ -113,9 +110,9 @@
 
 <!--                    LONG NAME: True or false interaction       -->
 <!ENTITY % lcTrueFalse.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestion;),
-                         (%lcAsset;)?,
+                         (%lcAsset;)*,
                          (%lcAnswerOptionGroup;),
                          (%lcFeedbackIncorrect;)?,
                          (%lcFeedbackCorrect;)?,
@@ -124,7 +121,7 @@
 <!ENTITY % lcTrueFalse.attributes
               "id
                           NMTOKEN
-                                    #REQUIRED
+                                    #IMPLIED
                %conref-atts;
                %select-atts;
                %localization-atts;
@@ -138,9 +135,9 @@
 
 <!--                    LONG NAME: Single selection interaction    -->
 <!ENTITY % lcSingleSelect.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestion;),
-                         (%lcAsset;)?,
+                         (%lcAsset;)*,
                          (%lcAnswerOptionGroup;),
                          (%lcFeedbackIncorrect;)?,
                          (%lcFeedbackCorrect;)?,
@@ -149,7 +146,7 @@
 <!ENTITY % lcSingleSelect.attributes
               "id
                           NMTOKEN
-                                    #REQUIRED
+                                    #IMPLIED
                %conref-atts;
                %select-atts;
                %localization-atts;
@@ -163,9 +160,9 @@
 
 <!--                    LONG NAME: Multiple selection interaction  -->
 <!ENTITY % lcMultipleSelect.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestion;),
-                         (%lcAsset;)?,
+                         (%lcAsset;)*,
                          (%lcAnswerOptionGroup;),
                          (%lcFeedbackIncorrect;)?,
                          (%lcFeedbackCorrect;)?,
@@ -174,7 +171,7 @@
 <!ENTITY % lcMultipleSelect.attributes
               "id
                           NMTOKEN
-                                    #REQUIRED
+                                    #IMPLIED
                %conref-atts;
                %select-atts;
                %localization-atts;
@@ -188,9 +185,9 @@
 
 <!--                    LONG NAME: Sequencing interaction          -->
 <!ENTITY % lcSequencing.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestion;),
-                         (%lcAsset;)?,
+                         (%lcAsset;)*,
                          (%lcSequenceOptionGroup;),
                          (%lcFeedbackIncorrect;)?,
                          (%lcFeedbackCorrect;)?,
@@ -199,7 +196,7 @@
 <!ENTITY % lcSequencing.attributes
               "id
                           NMTOKEN
-                                    #REQUIRED
+                                    #IMPLIED
                %conref-atts;
                %select-atts;
                %localization-atts;
@@ -213,9 +210,9 @@
 
 <!--                    LONG NAME: Matching interaction            -->
 <!ENTITY % lcMatching.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestion;),
-                         (%lcAsset;)?,
+                         (%lcAsset;)*,
                          (%lcMatchTable;),
                          (%lcFeedbackIncorrect;)?,
                          (%lcFeedbackCorrect;)?,
@@ -224,7 +221,7 @@
 <!ENTITY % lcMatching.attributes
               "id
                           NMTOKEN
-                                    #REQUIRED
+                                    #IMPLIED
                %conref-atts;
                %select-atts;
                %localization-atts;
@@ -238,7 +235,7 @@
 
 <!--                    LONG NAME: Hotspot interaction             -->
 <!ENTITY % lcHotspot.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestion;),
                          (%lcHotspotMap;),
                          (%lcFeedbackIncorrect;)?,
@@ -248,7 +245,7 @@
 <!ENTITY % lcHotspot.attributes
               "id
                           NMTOKEN
-                                    #REQUIRED
+                                    #IMPLIED
                %conref-atts;
                %select-atts;
                %localization-atts;
@@ -262,9 +259,9 @@
 
 <!--                    LONG NAME: Open-ended question interaction -->
 <!ENTITY % lcOpenQuestion.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestion;),
-                         (%lcAsset;)?,
+                         (%lcAsset;)*,
                          (%lcOpenAnswer;)?,
                          (%lcFeedbackIncorrect;)?,
                          (%lcFeedbackCorrect;)?,
@@ -273,7 +270,7 @@
 <!ENTITY % lcOpenQuestion.attributes
               "id
                           NMTOKEN
-                                    #REQUIRED
+                                    #IMPLIED
                %conref-atts;
                %select-atts;
                %localization-atts;
@@ -287,7 +284,7 @@
 
 <!--                    LONG NAME: Question (prompt)               -->
 <!ENTITY % lcQuestion.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcQuestion.attributes
               "%univ-atts;
@@ -301,7 +298,7 @@
 
 <!--                    LONG NAME: Open answer                     -->
 <!ENTITY % lcOpenAnswer.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcOpenAnswer.attributes
               "%univ-atts;
@@ -315,8 +312,7 @@
 
 <!--                    LONG NAME: Answer option group             -->
 <!ENTITY % lcAnswerOptionGroup.content
-                       "((%data; |
-                          %data-about;)*,
+                       "((%data;)*,
                          (%lcAnswerOption;)+)"
 >
 <!ENTITY % lcAnswerOptionGroup.attributes
@@ -331,8 +327,7 @@
 
 <!--                    LONG NAME: Sequence option group           -->
 <!ENTITY % lcSequenceOptionGroup.content
-                       "((%data; |
-                          %data-about;)*,
+                       "((%data;)*,
                          (%lcSequenceOption;)+)"
 >
 <!ENTITY % lcSequenceOptionGroup.attributes
@@ -378,7 +373,7 @@
 
 <!--                    LONG NAME: Feedback                        -->
 <!ENTITY % lcFeedback.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcFeedback.attributes
               "%univ-atts;
@@ -392,7 +387,7 @@
 
 <!--                    LONG NAME: Correct-response feedback       -->
 <!ENTITY % lcFeedbackCorrect.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcFeedbackCorrect.attributes
               "%univ-atts;
@@ -406,7 +401,7 @@
 
 <!--                    LONG NAME: Incorrect-response feedback     -->
 <!ENTITY % lcFeedbackIncorrect.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcFeedbackIncorrect.attributes
               "%univ-atts;
@@ -436,7 +431,7 @@
 
 <!--                    LONG NAME: Answer content                  -->
 <!ENTITY % lcAnswerContent.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcAnswerContent.attributes
               "%univ-atts;
@@ -496,7 +491,7 @@
 
 <!--                    LONG NAME: Item to be matched              -->
 <!ENTITY % lcItem.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcItem.attributes
               "%univ-atts;
@@ -510,7 +505,7 @@
 
 <!--                    LONG NAME: Matching item                   -->
 <!ENTITY % lcMatchingItem.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcMatchingItem.attributes
               "%univ-atts;
@@ -613,10 +608,10 @@
 <!ENTITY % lcCorrectResponse.attributes
               "name
                           CDATA
-                                    'lcCorrectResponse'
+                                    'lcCorrectResponse2'
                value
                           CDATA
-                                    'lcCorrectResponse'
+                                    'lcCorrectResponse2'
                %univ-atts;
                outputclass
                           CDATA
@@ -626,14 +621,14 @@
 <!ATTLIST  lcCorrectResponse %lcCorrectResponse.attributes;>
 
 
-<!--                    LONG NAME: Sequence interaction            -->
+<!--                    LONG NAME: Sequence position               -->
 <!ENTITY % lcSequence.content
                        "EMPTY"
 >
 <!ENTITY % lcSequence.attributes
               "name
                           CDATA
-                                    'lcSequence'
+                                    'lcSequence2'
                value
                           CDATA
                                     #REQUIRED
@@ -651,37 +646,37 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  lcInstructornote %global-atts;  class CDATA "+ topic/note learningInteractionBase-d/note learning-d/lcInstructornote ">
-<!ATTLIST  lcTrueFalse  %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcTrueFalse ">
-<!ATTLIST  lcSingleSelect %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcSingleSelect ">
-<!ATTLIST  lcMultipleSelect %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcMultipleSelect ">
-<!ATTLIST  lcSequencing %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcSequencing ">
-<!ATTLIST  lcMatching   %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcMatching ">
-<!ATTLIST  lcHotspot    %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcHotspot ">
-<!ATTLIST  lcOpenQuestion %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase learning-d/lcOpenQuestion ">
-<!ATTLIST  lcQuestion   %global-atts;  class CDATA "+ topic/p learningInteractionBase-d/lcQuestionBase learning-d/lcQuestion ">
-<!ATTLIST  lcOpenAnswer %global-atts;  class CDATA "+ topic/p learningInteractionBase-d/p learning-d/lcOpenAnswer ">
-<!ATTLIST  lcAsset      %global-atts;  class CDATA "+ topic/p learningInteractionBase-d/p learning-d/lcAsset ">
-<!ATTLIST  lcFeedback   %global-atts;  class CDATA "+ topic/p learningInteractionBase-d/p learning-d/lcFeedback ">
-<!ATTLIST  lcFeedbackCorrect %global-atts;  class CDATA "+ topic/p learningInteractionBase-d/p learning-d/lcFeedbackCorrect ">
-<!ATTLIST  lcFeedbackIncorrect %global-atts;  class CDATA "+ topic/p learningInteractionBase-d/p learning-d/lcFeedbackIncorrect ">
-<!ATTLIST  lcAnswerOption %global-atts;  class CDATA "+ topic/li learningInteractionBase-d/li learning-d/lcAnswerOption ">
-<!ATTLIST  lcAnswerOptionGroup %global-atts;  class CDATA "+ topic/ul learningInteractionBase-d/ul learning-d/lcAnswerOptionGroup ">
-<!ATTLIST  lcAnswerContent %global-atts;  class CDATA "+ topic/p learningInteractionBase-d/p learning-d/lcAnswerContent ">
-<!ATTLIST  lcMatchTable %global-atts;  class CDATA "+ topic/simpletable learningInteractionBase-d/simpletable learning-d/lcMatchTable ">
-<!ATTLIST  lcMatchingHeader %global-atts;  class CDATA "+ topic/sthead learningInteractionBase-d/sthead learning-d/lcMatchingHeader ">
-<!ATTLIST  lcMatchingPair %global-atts;  class CDATA "+ topic/strow learningInteractionBase-d/strow learning-d/lcMatchingPair ">
-<!ATTLIST  lcItem       %global-atts;  class CDATA "+ topic/stentry learningInteractionBase-d/stentry learning-d/lcItem ">
-<!ATTLIST  lcMatchingItem %global-atts;  class CDATA "+ topic/stentry learningInteractionBase-d/stentry learning-d/lcMatchingItem ">
-<!ATTLIST  lcMatchingItemFeedback %global-atts;  class CDATA "+ topic/stentry learningInteractionBase-d/stentry learning-d/lcMatchingItemFeedback ">
-<!ATTLIST  lcSequenceOptionGroup %global-atts;  class CDATA "+ topic/ol learningInteractionBase-d/ol learning-d/lcSequenceOptionGroup ">
-<!ATTLIST  lcSequenceOption %global-atts;  class CDATA "+ topic/li learningInteractionBase-d/li learning-d/lcSequenceOption ">
-<!ATTLIST  lcSequence   %global-atts;  class CDATA "+ topic/data learningInteractionBase-d/data learning-d/lcSequence ">
-<!ATTLIST  lcCorrectResponse %global-atts;  class CDATA "+ topic/data learningInteractionBase-d/data learning-d/lcCorrectResponse ">
-<!ATTLIST  lcHotspotMap %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/figgroup learning-d/lcHotspotMap ">
-<!ATTLIST  lcArea       %global-atts;  class CDATA "+ topic/figgroup learningInteractionBase-d/figgroup learning-d/lcArea ">
-<!ATTLIST  lcAreaShape  %global-atts;  class CDATA "+ topic/keyword learningInteractionBase-d/keyword learning-d/lcAreaShape ">
-<!ATTLIST  lcAreaCoords %global-atts;  class CDATA "+ topic/ph learningInteractionBase-d/ph learning-d/lcAreaCoords ">
+<!ATTLIST  lcInstructornote    class CDATA "+ topic/note learningInteractionBase-d/note learning-d/lcInstructornote learning-d/lcInstructornote2 ">
+<!ATTLIST  lcTrueFalse         class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcTrueFalse learning-d/lcTrueFalse2 ">
+<!ATTLIST  lcSingleSelect      class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcSingleSelect learning-d/lcSingleSelect2 ">
+<!ATTLIST  lcMultipleSelect    class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcMultipleSelect learning-d/lcMultipleSelect2 ">
+<!ATTLIST  lcSequencing        class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcSequencing learning-d/lcSequencing2 ">
+<!ATTLIST  lcMatching          class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcMatching learning-d/lcMatching2 ">
+<!ATTLIST  lcHotspot           class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcHotspot learning-d/lcHotspot2 ">
+<!ATTLIST  lcOpenQuestion      class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase learning-d/lcOpenQuestion learning-d/lcOpenQuestion2 ">
+<!ATTLIST  lcQuestion          class CDATA "+ topic/div learningInteractionBase-d/lcQuestionBase2 learning-d/lcQuestion learning-d/lcQuestion2 ">
+<!ATTLIST  lcOpenAnswer        class CDATA "+ topic/div learningInteractionBase-d/div learning-d/lcOpenAnswer learning-d/lcOpenAnswer2 ">
+<!ATTLIST  lcAsset             class CDATA "+ topic/div learningInteractionBase-d/div learning-d/lcAsset learning-d/lcAsset2 ">
+<!ATTLIST  lcFeedback          class CDATA "+ topic/div learningInteractionBase-d/div learning-d/lcFeedback learning-d/lcFeedback2 ">
+<!ATTLIST  lcFeedbackCorrect   class CDATA "+ topic/div learningInteractionBase-d/div learning-d/lcFeedbackCorrect learning-d/lcFeedbackCorrect2 ">
+<!ATTLIST  lcFeedbackIncorrect class CDATA "+ topic/div learningInteractionBase-d/div learning-d/lcFeedbackIncorrect learning-d/lcFeedbackIncorrect2 ">
+<!ATTLIST  lcAnswerOption      class CDATA "+ topic/li learningInteractionBase-d/li learning-d/lcAnswerOption learning-d/lcAnswerOption2 ">
+<!ATTLIST  lcAnswerOptionGroup class CDATA "+ topic/ul learningInteractionBase-d/ul learning-d/lcAnswerOptionGroup learning-d/lcAnswerOptionGroup2 ">
+<!ATTLIST  lcAnswerContent     class CDATA "+ topic/div learningInteractionBase-d/div learning-d/lcAnswerContent learning-d/lcAnswerContent2 ">
+<!ATTLIST  lcMatchTable        class CDATA "+ topic/simpletable learningInteractionBase-d/simpletable learning-d/lcMatchTable learning-d/lcMatchTable2 ">
+<!ATTLIST  lcMatchingHeader    class CDATA "+ topic/sthead learningInteractionBase-d/sthead learning-d/lcMatchingHeader learning-d/lcMatchingHeader2 ">
+<!ATTLIST  lcMatchingPair      class CDATA "+ topic/strow learningInteractionBase-d/strow learning-d/lcMatchingPair learning-d/lcMatchingPair2 ">
+<!ATTLIST  lcItem              class CDATA "+ topic/stentry learningInteractionBase-d/stentry learning-d/lcItem learning-d/lcItem2 ">
+<!ATTLIST  lcMatchingItem      class CDATA "+ topic/stentry learningInteractionBase-d/stentry learning-d/lcMatchingItem learning-d/lcMatchingItem2 ">
+<!ATTLIST  lcMatchingItemFeedback class CDATA "+ topic/stentry learningInteractionBase-d/stentry learning-d/lcMatchingItemFeedback learning-d/lcMatchingItemFeedback2 ">
+<!ATTLIST  lcSequenceOptionGroup class CDATA "+ topic/ol learningInteractionBase-d/ol learning-d/lcSequenceOptionGroup learning-d/lcSequenceOptionGroup2 ">
+<!ATTLIST  lcSequenceOption    class CDATA "+ topic/li learningInteractionBase-d/li learning-d/lcSequenceOption learning-d/lcSequenceOption2 ">
+<!ATTLIST  lcSequence          class CDATA "+ topic/data learningInteractionBase-d/data learning-d/lcSequence learning-d/lcSequence2 ">
+<!ATTLIST  lcCorrectResponse   class CDATA "+ topic/data learningInteractionBase-d/data learning-d/lcCorrectResponse learning-d/lcCorrectResponse2 ">
+<!ATTLIST  lcHotspotMap        class CDATA "+ topic/div learningInteractionBase-d/div learning-d/lcHotspotMap learning-d/lcHotspotMap2 ">
+<!ATTLIST  lcArea              class CDATA "+ topic/figgroup learningInteractionBase-d/figgroup learning-d/lcArea learning-d/lcArea2 ">
+<!ATTLIST  lcAreaShape         class CDATA "+ topic/keyword learningInteractionBase-d/keyword learning-d/lcAreaShape learning-d/lcAreaShape2 ">
+<!ATTLIST  lcAreaCoords        class CDATA "+ topic/ph learningInteractionBase-d/ph learning-d/lcAreaCoords learning-d/lcAreaCoords ">
 
-<!-- ================== End of DITA Learning Domain ==================== -->
+<!-- ================== End of DITA Learning  Domain ==================== -->
  

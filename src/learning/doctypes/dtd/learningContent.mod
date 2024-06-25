@@ -3,8 +3,8 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA learningContent                              -->
-<!--  VERSION:   1.3                                               -->
-<!--  DATE:      March 2014                                        -->
+<!--  VERSION:   2.0                                               -->
+<!--  DATE:      November 2023                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
 <!-- ============================================================= -->
@@ -24,7 +24,7 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             May 2007                                          -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2014.              -->
+<!--             (C) Copyright OASIS Open 2007, 2023.              -->
 <!--             All Rights Reserved.                              -->
 <!-- ============================================================= -->
 
@@ -99,8 +99,8 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  learningContent %global-atts;  class CDATA "- topic/topic learningBase/learningBase learningContent/learningContent ">
-<!ATTLIST  learningContentbody %global-atts;  class CDATA "- topic/body  learningBase/learningBasebody learningContent/learningContentbody ">
+<!ATTLIST  learningContent     class CDATA "- topic/topic learningBase/learningBase learningContent/learningContent ">
+<!ATTLIST  learningContentbody class CDATA "- topic/body  learningBase/learningBasebody learningContent/learningContentbody ">
 
 <!-- ================== End of DITA learningContent Module ==================== -->
  

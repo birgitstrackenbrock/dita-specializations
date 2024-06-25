@@ -3,8 +3,8 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA learningPlan                                 -->
-<!--  VERSION:   1.2                                               -->
-<!--  DATE:      November 2009                                     -->
+<!--  VERSION:   2.0                                               -->
+<!--  DATE:      November 2023                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
 <!-- ============================================================= -->
@@ -24,7 +24,7 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             May 2007                                          -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009.              -->
+<!--             (C) Copyright OASIS Open 2007, 2023.              -->
 <!--             All Rights Reserved.                              -->
 <!-- ============================================================= -->
 <!--                                                               -->
@@ -149,10 +149,9 @@
 <!ELEMENT  learningPlan %learningPlan.content;>
 <!ATTLIST  learningPlan %learningPlan.attributes;
                  %arch-atts;
-                 domains 
+                 specializations
                         CDATA
-                                  "&included-domains;"
->
+                                  "&included-domains;">
 
 
 <!--                    LONG NAME: Learning plan body              -->
@@ -165,10 +164,7 @@
                          (%section;)*)"
 >
 <!ENTITY % learningPlanbody.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  learningPlanbody %learningPlanbody.content;>
 <!ATTLIST  learningPlanbody %learningPlanbody.attributes;>
@@ -187,13 +183,7 @@
                          (%lcPlanPrereqs;)?)"
 >
 <!ENTITY % lcProject.attributes
-              "%univ-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcProject %lcProject.content;>
 <!ATTLIST  lcProject %lcProject.attributes;>
@@ -206,13 +196,7 @@
 >
 <!ENTITY % lcClient.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+               %univ-atts;"
 >
 <!ELEMENT  lcClient %lcClient.content;>
 <!ATTLIST  lcClient %lcClient.attributes;>
@@ -225,13 +209,8 @@
 >
 <!ENTITY % lcPlanTitle.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+               "
 >
 <!ELEMENT  lcPlanTitle %lcPlanTitle.content;>
 <!ATTLIST  lcPlanTitle %lcPlanTitle.attributes;>
@@ -244,13 +223,8 @@
 >
 <!ENTITY % lcCIN.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcCIN %lcCIN.content;>
 <!ATTLIST  lcCIN %lcCIN.attributes;>
@@ -263,13 +237,8 @@
 >
 <!ENTITY % lcModDate.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcModDate %lcModDate.content;>
 <!ATTLIST  lcModDate %lcModDate.attributes;>
@@ -282,13 +251,8 @@
 >
 <!ENTITY % lcDelivDate.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcDelivDate %lcDelivDate.content;>
 <!ATTLIST  lcDelivDate %lcDelivDate.attributes;>
@@ -301,13 +265,8 @@
 >
 <!ENTITY % lcPlanSubject.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcPlanSubject %lcPlanSubject.content;>
 <!ATTLIST  lcPlanSubject %lcPlanSubject.attributes;>
@@ -320,13 +279,8 @@
 >
 <!ENTITY % lcPlanDescrip.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcPlanDescrip %lcPlanDescrip.content;>
 <!ATTLIST  lcPlanDescrip %lcPlanDescrip.attributes;>
@@ -339,13 +293,8 @@
 >
 <!ENTITY % lcPlanPrereqs.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcPlanPrereqs %lcPlanPrereqs.content;>
 <!ATTLIST  lcPlanPrereqs %lcPlanPrereqs.attributes;>
@@ -361,12 +310,7 @@
 >
 <!ENTITY % lcNeedsAnalysis.attributes
               "%univ-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcNeedsAnalysis %lcNeedsAnalysis.content;>
 <!ATTLIST  lcNeedsAnalysis %lcNeedsAnalysis.attributes;>
@@ -383,13 +327,8 @@
 >
 <!ENTITY % lcOrganizational.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcOrganizational %lcOrganizational.content;>
 <!ATTLIST  lcOrganizational %lcOrganizational.attributes;>
@@ -400,10 +339,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcGeneralDescription.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcGeneralDescription %lcGeneralDescription.content;>
 <!ATTLIST  lcGeneralDescription %lcGeneralDescription.attributes;>
@@ -414,10 +350,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcGoals.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcGoals %lcGoals.content;>
 <!ATTLIST  lcGoals %lcGoals.attributes;>
@@ -428,10 +361,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcNeeds.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcNeeds %lcNeeds.content;>
 <!ATTLIST  lcNeeds %lcNeeds.attributes;>
@@ -442,10 +372,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcValues.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcValues %lcValues.content;>
 <!ATTLIST  lcValues %lcValues.attributes;>
@@ -456,10 +383,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcOrgConstraints.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcOrgConstraints %lcOrgConstraints.content;>
 <!ATTLIST  lcOrgConstraints %lcOrgConstraints.attributes;>
@@ -479,13 +403,7 @@
 >
 <!ENTITY % lcPlanAudience.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+               %univ-atts;"
 >
 <!ELEMENT  lcPlanAudience %lcPlanAudience.content;>
 <!ATTLIST  lcPlanAudience %lcPlanAudience.attributes;>
@@ -496,10 +414,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcEdLevel.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcEdLevel %lcEdLevel.content;>
 <!ATTLIST  lcEdLevel %lcEdLevel.attributes;>
@@ -510,10 +425,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcAge.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcAge %lcAge.content;>
 <!ATTLIST  lcAge %lcAge.attributes;>
@@ -524,10 +436,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcBackground.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcBackground %lcBackground.content;>
 <!ATTLIST  lcBackground %lcBackground.attributes;>
@@ -538,10 +447,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcSkills.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcSkills %lcSkills.content;>
 <!ATTLIST  lcSkills %lcSkills.attributes;>
@@ -552,10 +458,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcKnowledge.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcKnowledge %lcKnowledge.content;>
 <!ATTLIST  lcKnowledge %lcKnowledge.attributes;>
@@ -566,10 +469,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcMotivation.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcMotivation %lcMotivation.content;>
 <!ATTLIST  lcMotivation %lcMotivation.attributes;>
@@ -580,10 +480,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcSpecChars.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcSpecChars %lcSpecChars.content;>
 <!ATTLIST  lcSpecChars %lcSpecChars.attributes;>
@@ -598,13 +495,8 @@
 >
 <!ENTITY % lcWorkEnv.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcWorkEnv %lcWorkEnv.content;>
 <!ATTLIST  lcWorkEnv %lcWorkEnv.attributes;>
@@ -615,10 +507,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcWorkEnvDescription.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcWorkEnvDescription %lcWorkEnvDescription.content;>
 <!ATTLIST  lcWorkEnvDescription %lcWorkEnvDescription.attributes;>
@@ -629,10 +518,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcPlanResources.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcPlanResources %lcPlanResources.content;>
 <!ATTLIST  lcPlanResources %lcPlanResources.attributes;>
@@ -643,10 +529,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcProcesses.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcProcesses %lcProcesses.content;>
 <!ATTLIST  lcProcesses %lcProcesses.attributes;>
@@ -662,13 +545,7 @@
 >
 <!ENTITY % lcTask.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+               %univ-atts;"
 >
 <!ELEMENT  lcTask %lcTask.content;>
 <!ATTLIST  lcTask %lcTask.attributes;>
@@ -679,10 +556,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcTaskItem.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcTaskItem %lcTaskItem.content;>
 <!ATTLIST  lcTaskItem %lcTaskItem.attributes;>
@@ -693,10 +567,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcAttitude.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcAttitude %lcAttitude.content;>
 <!ATTLIST  lcAttitude %lcAttitude.attributes;>
@@ -708,13 +579,7 @@
                          (%lcGapItem;)*)"
 >
 <!ENTITY % lcGapAnalysis.attributes
-              "%univ-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcGapAnalysis %lcGapAnalysis.content;>
 <!ATTLIST  lcGapAnalysis %lcGapAnalysis.attributes;>
@@ -729,13 +594,8 @@
 >
 <!ENTITY % lcGapItem.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcGapItem %lcGapItem.content;>
 <!ATTLIST  lcGapItem %lcGapItem.attributes;>
@@ -746,10 +606,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcPlanObjective.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcPlanObjective %lcPlanObjective.content;>
 <!ATTLIST  lcPlanObjective %lcPlanObjective.attributes;>
@@ -760,10 +617,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcJtaItem.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcJtaItem %lcJtaItem.content;>
 <!ATTLIST  lcJtaItem %lcJtaItem.attributes;>
@@ -774,10 +628,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcGapItemDelta.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcGapItemDelta %lcGapItemDelta.content;>
 <!ATTLIST  lcGapItemDelta %lcGapItemDelta.attributes;>
@@ -789,13 +640,7 @@
                          (%lcInterventionItem;)*)"
 >
 <!ENTITY % lcIntervention.attributes
-              "%univ-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcIntervention %lcIntervention.content;>
 <!ATTLIST  lcIntervention %lcIntervention.attributes;>
@@ -811,13 +656,8 @@
 >
 <!ENTITY % lcInterventionItem.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcInterventionItem %lcInterventionItem.content;>
 <!ATTLIST  lcInterventionItem %lcInterventionItem.attributes;>
@@ -828,10 +668,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcLearnStrat.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcLearnStrat %lcLearnStrat.content;>
 <!ATTLIST  lcLearnStrat %lcLearnStrat.attributes;>
@@ -842,10 +679,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcAssessment.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcAssessment %lcAssessment.content;>
 <!ATTLIST  lcAssessment %lcAssessment.attributes;>
@@ -856,10 +690,7 @@
                        "(%para.cnt;)*"
 >
 <!ENTITY % lcDelivery.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcDelivery %lcDelivery.content;>
 <!ATTLIST  lcDelivery %lcDelivery.attributes;>
@@ -884,13 +715,7 @@
                          (%lcSecurity;)?)"
 >
 <!ENTITY % lcTechnical.attributes
-              "%univ-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  lcTechnical %lcTechnical.content;>
 <!ATTLIST  lcTechnical %lcTechnical.attributes;>
@@ -903,13 +728,8 @@
 >
 <!ENTITY % lcLMS.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcLMS %lcLMS.content;>
 <!ATTLIST  lcLMS %lcLMS.attributes;>
@@ -922,13 +742,8 @@
 >
 <!ENTITY % lcNoLMS.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcNoLMS %lcNoLMS.content;>
 <!ATTLIST  lcNoLMS %lcNoLMS.attributes;>
@@ -941,13 +756,8 @@
 >
 <!ENTITY % lcHandouts.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcHandouts %lcHandouts.content;>
 <!ATTLIST  lcHandouts %lcHandouts.attributes;>
@@ -960,13 +770,8 @@
 >
 <!ENTITY % lcClassroom.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcClassroom %lcClassroom.content;>
 <!ATTLIST  lcClassroom %lcClassroom.attributes;>
@@ -979,13 +784,8 @@
 >
 <!ENTITY % lcOJT.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcOJT %lcOJT.content;>
 <!ATTLIST  lcOJT %lcOJT.attributes;>
@@ -998,13 +798,8 @@
 >
 <!ENTITY % lcConstraints.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcConstraints %lcConstraints.content;>
 <!ATTLIST  lcConstraints %lcConstraints.attributes;>
@@ -1017,13 +812,8 @@
 >
 <!ENTITY % lcW3C.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcW3C %lcW3C.content;>
 <!ATTLIST  lcW3C %lcW3C.attributes;>
@@ -1036,13 +826,8 @@
 >
 <!ENTITY % lcPlayers.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcPlayers %lcPlayers.content;>
 <!ATTLIST  lcPlayers %lcPlayers.attributes;>
@@ -1055,13 +840,8 @@
 >
 <!ENTITY % lcGraphics.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcGraphics %lcGraphics.content;>
 <!ATTLIST  lcGraphics %lcGraphics.attributes;>
@@ -1074,13 +854,8 @@
 >
 <!ENTITY % lcViewers.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcViewers %lcViewers.content;>
 <!ATTLIST  lcViewers %lcViewers.attributes;>
@@ -1093,13 +868,8 @@
 >
 <!ENTITY % lcResolution.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcResolution %lcResolution.content;>
 <!ATTLIST  lcResolution %lcResolution.attributes;>
@@ -1112,13 +882,8 @@
 >
 <!ENTITY % lcFileSizeLimitations.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcFileSizeLimitations %lcFileSizeLimitations.content;>
 <!ATTLIST  lcFileSizeLimitations %lcFileSizeLimitations.attributes;>
@@ -1131,13 +896,8 @@
 >
 <!ENTITY % lcDownloadTime.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcDownloadTime %lcDownloadTime.content;>
 <!ATTLIST  lcDownloadTime %lcDownloadTime.attributes;>
@@ -1150,13 +910,8 @@
 >
 <!ENTITY % lcSecurity.attributes
               "%display-atts;
-               spectitle
-                          CDATA
-                                    #IMPLIED
                %univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "
 >
 <!ELEMENT  lcSecurity %lcSecurity.content;>
 <!ATTLIST  lcSecurity %lcSecurity.attributes;>
@@ -1167,64 +922,64 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  learningPlan %global-atts;  class CDATA "- topic/topic learningBase/learningBase learningPlan/learningPlan ">
-<!ATTLIST  learningPlanbody %global-atts;  class CDATA "- topic/body  learningBase/learningBasebody learningPlan/learningPlanbody ">
-<!ATTLIST  lcProject    %global-atts;  class CDATA "- topic/section  learningBase/section learningPlan/lcProject ">
-<!ATTLIST  lcNeedsAnalysis %global-atts;  class CDATA "- topic/section  learningBase/section learningPlan/lcNeedsAnalysis ">
-<!ATTLIST  lcGapAnalysis %global-atts;  class CDATA "- topic/section  learningBase/section learningPlan/lcGapAnalysis ">
-<!ATTLIST  lcIntervention %global-atts;  class CDATA "- topic/section  learningBase/section learningPlan/lcIntervention ">
-<!ATTLIST  lcTechnical  %global-atts;  class CDATA "- topic/section  learningBase/section learningPlan/lcTechnical ">
-<!ATTLIST  lcClient     %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcClient ">
-<!ATTLIST  lcPlanTitle  %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanTitle ">
-<!ATTLIST  lcCIN        %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcCIN ">
-<!ATTLIST  lcModDate    %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcModDate ">
-<!ATTLIST  lcDelivDate  %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcDelivDate ">
-<!ATTLIST  lcPlanSubject %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanSubject ">
-<!ATTLIST  lcPlanDescrip %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanDescrip ">
-<!ATTLIST  lcPlanPrereqs %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanPrereqs ">
-<!ATTLIST  lcOrganizational %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcOrganizational ">
-<!ATTLIST  lcGoals      %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcGoals ">
-<!ATTLIST  lcNeeds      %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcNeeds ">
-<!ATTLIST  lcValues     %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcValues ">
-<!ATTLIST  lcOrgConstraints %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcOrgConstraints ">
-<!ATTLIST  lcPlanAudience %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanAudience ">
-<!ATTLIST  lcGeneralDescription %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcGeneralDescription ">
-<!ATTLIST  lcEdLevel    %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcEdLevel ">
-<!ATTLIST  lcAge        %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcAge ">
-<!ATTLIST  lcBackground %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcBackground ">
-<!ATTLIST  lcSkills     %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcSkills ">
-<!ATTLIST  lcKnowledge  %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcKnowledge ">
-<!ATTLIST  lcMotivation %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcMotivation ">
-<!ATTLIST  lcSpecChars  %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcSpecChars ">
-<!ATTLIST  lcWorkEnv    %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcWorkEnv ">
-<!ATTLIST  lcWorkEnvDescription %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcWorkEnvDescription ">
-<!ATTLIST  lcPlanResources %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcPlanResources ">
-<!ATTLIST  lcProcesses  %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcProcesses ">
-<!ATTLIST  lcTask       %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcTask ">
-<!ATTLIST  lcTaskItem   %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcTaskItem ">
-<!ATTLIST  lcAttitude   %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcAttitude ">
-<!ATTLIST  lcGapItem    %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcGapItem ">
-<!ATTLIST  lcPlanObjective %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcPlanObjective ">
-<!ATTLIST  lcJtaItem    %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcJtaItem ">
-<!ATTLIST  lcGapItemDelta %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcGapItemDelta ">
-<!ATTLIST  lcInterventionItem %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcInterventionItem ">
-<!ATTLIST  lcLearnStrat %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcLearnStrat ">
-<!ATTLIST  lcAssessment %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcAssessment ">
-<!ATTLIST  lcDelivery   %global-atts;  class CDATA "- topic/p  learningBase/p learningPlan/lcDelivery ">
-<!ATTLIST  lcLMS        %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcLMS ">
-<!ATTLIST  lcNoLMS      %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcNoLMS ">
-<!ATTLIST  lcHandouts   %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcHandouts ">
-<!ATTLIST  lcClassroom  %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcClassroom ">
-<!ATTLIST  lcOJT        %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcOJT ">
-<!ATTLIST  lcConstraints %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcConstraints ">
-<!ATTLIST  lcW3C        %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcW3C ">
-<!ATTLIST  lcPlayers    %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlayers ">
-<!ATTLIST  lcGraphics   %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcGraphics ">
-<!ATTLIST  lcViewers    %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcViewers ">
-<!ATTLIST  lcResolution %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcResolution ">
-<!ATTLIST  lcFileSizeLimitations %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcFileSizeLimitations ">
-<!ATTLIST  lcDownloadTime %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcDownloadTime ">
-<!ATTLIST  lcSecurity   %global-atts;  class CDATA "- topic/fig  learningBase/fig learningPlan/lcSecurity ">
+<!ATTLIST  learningPlan     class CDATA "- topic/topic learningBase/learningBase learningPlan/learningPlan ">
+<!ATTLIST  learningPlanbody class CDATA "- topic/body  learningBase/learningBasebody learningPlan/learningPlanbody ">
+<!ATTLIST  lcProject        class CDATA "- topic/section  learningBase/section learningPlan/lcProject ">
+<!ATTLIST  lcNeedsAnalysis  class CDATA "- topic/section  learningBase/section learningPlan/lcNeedsAnalysis ">
+<!ATTLIST  lcGapAnalysis    class CDATA "- topic/section  learningBase/section learningPlan/lcGapAnalysis ">
+<!ATTLIST  lcIntervention   class CDATA "- topic/section  learningBase/section learningPlan/lcIntervention ">
+<!ATTLIST  lcTechnical      class CDATA "- topic/section  learningBase/section learningPlan/lcTechnical ">
+<!ATTLIST  lcClient         class CDATA "- topic/fig  learningBase/fig learningPlan/lcClient ">
+<!ATTLIST  lcPlanTitle      class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanTitle ">
+<!ATTLIST  lcCIN            class CDATA "- topic/fig  learningBase/fig learningPlan/lcCIN ">
+<!ATTLIST  lcModDate        class CDATA "- topic/fig  learningBase/fig learningPlan/lcModDate ">
+<!ATTLIST  lcDelivDate      class CDATA "- topic/fig  learningBase/fig learningPlan/lcDelivDate ">
+<!ATTLIST  lcPlanSubject    class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanSubject ">
+<!ATTLIST  lcPlanDescrip    class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanDescrip ">
+<!ATTLIST  lcPlanPrereqs    class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanPrereqs ">
+<!ATTLIST  lcOrganizational class CDATA "- topic/fig  learningBase/fig learningPlan/lcOrganizational ">
+<!ATTLIST  lcGoals          class CDATA "- topic/p  learningBase/p learningPlan/lcGoals ">
+<!ATTLIST  lcNeeds          class CDATA "- topic/p  learningBase/p learningPlan/lcNeeds ">
+<!ATTLIST  lcValues         class CDATA "- topic/p  learningBase/p learningPlan/lcValues ">
+<!ATTLIST  lcOrgConstraints class CDATA "- topic/p  learningBase/p learningPlan/lcOrgConstraints ">
+<!ATTLIST  lcPlanAudience   class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlanAudience ">
+<!ATTLIST  lcGeneralDescription class CDATA "- topic/p  learningBase/p learningPlan/lcGeneralDescription ">
+<!ATTLIST  lcEdLevel        class CDATA "- topic/p  learningBase/p learningPlan/lcEdLevel ">
+<!ATTLIST  lcAge            class CDATA "- topic/p  learningBase/p learningPlan/lcAge ">
+<!ATTLIST  lcBackground     class CDATA "- topic/p  learningBase/p learningPlan/lcBackground ">
+<!ATTLIST  lcSkills         class CDATA "- topic/p  learningBase/p learningPlan/lcSkills ">
+<!ATTLIST  lcKnowledge      class CDATA "- topic/p  learningBase/p learningPlan/lcKnowledge ">
+<!ATTLIST  lcMotivation     class CDATA "- topic/p  learningBase/p learningPlan/lcMotivation ">
+<!ATTLIST  lcSpecChars      class CDATA "- topic/p  learningBase/p learningPlan/lcSpecChars ">
+<!ATTLIST  lcWorkEnv        class CDATA "- topic/fig  learningBase/fig learningPlan/lcWorkEnv ">
+<!ATTLIST  lcWorkEnvDescription class CDATA "- topic/p  learningBase/p learningPlan/lcWorkEnvDescription ">
+<!ATTLIST  lcPlanResources  class CDATA "- topic/p  learningBase/p learningPlan/lcPlanResources ">
+<!ATTLIST  lcProcesses      class CDATA "- topic/p  learningBase/p learningPlan/lcProcesses ">
+<!ATTLIST  lcTask           class CDATA "- topic/fig  learningBase/fig learningPlan/lcTask ">
+<!ATTLIST  lcTaskItem       class CDATA "- topic/p  learningBase/p learningPlan/lcTaskItem ">
+<!ATTLIST  lcAttitude       class CDATA "- topic/p  learningBase/p learningPlan/lcAttitude ">
+<!ATTLIST  lcGapItem        class CDATA "- topic/fig  learningBase/fig learningPlan/lcGapItem ">
+<!ATTLIST  lcPlanObjective  class CDATA "- topic/p  learningBase/p learningPlan/lcPlanObjective ">
+<!ATTLIST  lcJtaItem        class CDATA "- topic/p  learningBase/p learningPlan/lcJtaItem ">
+<!ATTLIST  lcGapItemDelta   class CDATA "- topic/p  learningBase/p learningPlan/lcGapItemDelta ">
+<!ATTLIST  lcInterventionItem class CDATA "- topic/fig  learningBase/fig learningPlan/lcInterventionItem ">
+<!ATTLIST  lcLearnStrat     class CDATA "- topic/p  learningBase/p learningPlan/lcLearnStrat ">
+<!ATTLIST  lcAssessment     class CDATA "- topic/p  learningBase/p learningPlan/lcAssessment ">
+<!ATTLIST  lcDelivery       class CDATA "- topic/p  learningBase/p learningPlan/lcDelivery ">
+<!ATTLIST  lcLMS            class CDATA "- topic/fig  learningBase/fig learningPlan/lcLMS ">
+<!ATTLIST  lcNoLMS          class CDATA "- topic/fig  learningBase/fig learningPlan/lcNoLMS ">
+<!ATTLIST  lcHandouts       class CDATA "- topic/fig  learningBase/fig learningPlan/lcHandouts ">
+<!ATTLIST  lcClassroom      class CDATA "- topic/fig  learningBase/fig learningPlan/lcClassroom ">
+<!ATTLIST  lcOJT            class CDATA "- topic/fig  learningBase/fig learningPlan/lcOJT ">
+<!ATTLIST  lcConstraints    class CDATA "- topic/fig  learningBase/fig learningPlan/lcConstraints ">
+<!ATTLIST  lcW3C            class CDATA "- topic/fig  learningBase/fig learningPlan/lcW3C ">
+<!ATTLIST  lcPlayers        class CDATA "- topic/fig  learningBase/fig learningPlan/lcPlayers ">
+<!ATTLIST  lcGraphics       class CDATA "- topic/fig  learningBase/fig learningPlan/lcGraphics ">
+<!ATTLIST  lcViewers        class CDATA "- topic/fig  learningBase/fig learningPlan/lcViewers ">
+<!ATTLIST  lcResolution     class CDATA "- topic/fig  learningBase/fig learningPlan/lcResolution ">
+<!ATTLIST  lcFileSizeLimitations class CDATA "- topic/fig  learningBase/fig learningPlan/lcFileSizeLimitations ">
+<!ATTLIST  lcDownloadTime   class CDATA "- topic/fig  learningBase/fig learningPlan/lcDownloadTime ">
+<!ATTLIST  lcSecurity       class CDATA "- topic/fig  learningBase/fig learningPlan/lcSecurity ">
 
 <!-- ================== End of DITA learningPlan ==================== -->
  

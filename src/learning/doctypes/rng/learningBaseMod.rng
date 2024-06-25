@@ -9,9 +9,9 @@
 =============================================================
                    HEADER                                    
 =============================================================
- MODULE:    DITA learningBase                                
- VERSION:   1.2                                              
- DATE:      November 2009                                    
+ MODULE:    DITA learningBase topic type                             
+ VERSION:   2.0                                              
+ DATE:      November 2023                                    
                                                              
 =============================================================
 
@@ -21,8 +21,8 @@
                                                              
  Refer to this file by the following public identfier or an 
       appropriate system identifier 
-PUBLIC "-//OASIS//ELEMENTS DITA Learning Base//EN"
-      Delivered as file "learningBase.mod"                        
+
+urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningBaseMod.rng:2.0                        
 
 =============================================================
 SYSTEM:     Darwin Information Typing Architecture (DITA)    
@@ -33,13 +33,15 @@ PURPOSE:    Declaring the elements and specialization
 ORIGINAL CREATION DATE:                                      
             May 2007                                         
                                                              
-            (C) Copyright OASIS Open 2007, 2009.             
+            (C) Copyright OASIS Open 2007, 2023.             
             All Rights Reserved.                             
                                                              
- CHANGE LOG:                                                 
+CHANGE LOG:
                                                              
    Sept 2009: WEK: Make learningBasebody optional per        
-   TC decision.                                              
+   TC decision.
+   Nov 2023:  WEK: Updated for DITA 2.0.
+   
 =============================================================  </headerComment>
     <moduleMetadata>
       <moduleType>topic</moduleType>
@@ -47,12 +49,11 @@ ORIGINAL CREATION DATE:
       <modulePublicIds>
         <dtdEnt>-//OASIS//ENTITIES DITA<var presep=" " name="ditaver"/> Learning Base//EN</dtdEnt>
         <dtdMod>-//OASIS//ELEMENTS DITA<var presep=" " name="ditaver"/> Learning Base//EN</dtdMod>
-        <xsdMod>urn:oasis:names:tc:dita:spec:learning:xsd:learningBaseMod.xsd<var presep=":" name="ditaver"/></xsdMod>
-        <xsdGrp>urn:oasis:names:tc:dita:spec:learning:xsd:learningBaseGrp.xsd<var presep=":" name="ditaver"/></xsdGrp>
-        <rncMod>urn:oasis:names:tc:dita:spec:learning:rnc:learningBaseMod.rnc<var presep=":" name="ditaver"/></rncMod>
-        <rngMod>urn:oasis:names:tc:dita:spec:learning:rng:learningBaseMod.rng<var presep=":" name="ditaver"/></rngMod>
+        <xsdMod>urn:pubid:oasis:names:tc:dita:spec:learning:xsd:learningBaseMod.xsd<var presep=":" name="ditaver"/></xsdMod>
+        <xsdGrp>urn:pubid:oasis:names:tc:dita:spec:learning:xsd:learningBaseGrp.xsd<var presep=":" name="ditaver"/></xsdGrp>
+        <rncMod>urn:pubid:oasis:names:tc:dita:spec:learning:rnc:learningBaseMod.rnc<var presep=":" name="ditaver"/></rncMod>
+        <rngMod>urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningBaseMod.rng<var presep=":" name="ditaver"/></rngMod>
       </modulePublicIds>
-      <domainsContribution>(topic learningBase+learningInteractionBase-d+learningInteractionBase2)</domainsContribution>
     </moduleMetadata>
   </moduleDesc>
 
@@ -122,9 +123,6 @@ ORIGINAL CREATION DATE:
       <define name="learningBase.content">
         <ref name="title"/>
         <optional>
-          <ref name="titlealts"/>
-        </optional>
-        <optional>
           <choice>
             <ref name="shortdesc"/>
             <ref name="abstract"/>
@@ -150,10 +148,7 @@ ORIGINAL CREATION DATE:
         <ref name="conref-atts"/>
         <ref name="select-atts"/>
         <ref name="localization-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="learningBase.element">
         <element name="learningBase" dita:longName="Learning Base">
           <a:documentation>The learningBase topic type is not used to deliver any actual learning
@@ -191,10 +186,7 @@ ORIGINAL CREATION DATE:
       </define>
       <define name="learningBasebody.attributes">
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="learningBasebody.element">
         <element name="learningBasebody" dita:longName="Learning base body">
           <a:documentation>The &lt;learningBasebody> element is the main body-level element in a
@@ -220,10 +212,7 @@ ORIGINAL CREATION DATE:
         <optional>
           <attribute name="spectitle"/>
         </optional>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcIntro.element">
         <element name="lcIntro" dita:longName="Learning intro section">
           <a:documentation>The &lt;lcIntro> provides a detailed introduction and description of the
@@ -254,10 +243,7 @@ ORIGINAL CREATION DATE:
         <optional>
           <attribute name="spectitle"/>
         </optional>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcObjectives.element">
         <element name="lcObjectives" dita:longName="Learning objectives section">
           <a:documentation>The &lt;lcObjectives> lists or describes the learning
@@ -278,10 +264,7 @@ ORIGINAL CREATION DATE:
       </define>
       <define name="lcObjectivesStem.attributes">
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcObjectivesStem.element">
         <element name="lcObjectivesStem" dita:longName="Learning objectives stem">
           <a:documentation>The &lt;lcObjectivesStem> provides a leading sentence to introduce a list of
@@ -299,7 +282,6 @@ ORIGINAL CREATION DATE:
         <zeroOrMore dita:since="1.3">
           <choice>
             <ref name="data"/>
-            <ref name="data-about"/>
           </choice>
         </zeroOrMore>
         <oneOrMore>
@@ -308,10 +290,7 @@ ORIGINAL CREATION DATE:
       </define>
       <define name="lcObjectivesGroup.attributes">
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcObjectivesGroup.element">
         <element name="lcObjectivesGroup" dita:longName="Learning objectives group">
           <a:documentation>The &lt;lcObjectivesGroup> contains a list of one or more learning
@@ -332,10 +311,7 @@ ORIGINAL CREATION DATE:
       </define>
       <define name="lcObjective.attributes">
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcObjective.element">
         <element name="lcObjective" dita:longName="Learning objective">
           <a:documentation>The &lt;lcObjective> describes a single learning objective.</a:documentation>
@@ -358,10 +334,7 @@ ORIGINAL CREATION DATE:
         <optional>
           <attribute name="spectitle"/>
         </optional>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcAudience.element">
         <element name="lcAudience" dita:longName="Audience">
           <a:documentation>The &lt;lcAudience> describes characteristics of the learners who take the
@@ -388,10 +361,7 @@ ORIGINAL CREATION DATE:
         <optional>
           <attribute name="spectitle"/>
         </optional>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcDuration.element">
         <element name="lcDuration" dita:longName="Duration">
           <a:documentation>The &lt;lcDuration> provides an estimated duration for the learning
@@ -419,10 +389,7 @@ ORIGINAL CREATION DATE:
         </optional>
         <attribute name="value"/>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcTime.element">
         <element name="lcTime" dita:longName="Time to complete">
           <a:documentation>The &lt;lcTime> specifies the time expected to complete an
@@ -446,10 +413,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcPrereqs.element">
         <element name="lcPrereqs" dita:longName="Prerequisites">
           <a:documentation>The &lt;lcPrereqs> describes the knowledge, experience, or other
@@ -473,10 +437,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcSummary.element">
         <element name="lcSummary" dita:longName="Summary section">
           <a:documentation>The &lt;lcSummary> provides a textual summary that describes the main
@@ -500,10 +461,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcNextSteps.element">
         <element name="lcNextSteps" dita:longName="Next steps section">
           <a:documentation>The &lt;lcNextSteps> suggests next steps to reinforce the knowledge
@@ -527,10 +485,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcReview.element">
         <element name="lcReview" dita:longName="Review sections">
           <a:documentation>The &lt;lcReview> provides a review of the main points.</a:documentation>
@@ -553,10 +508,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcResources.element">
         <element name="lcResources" dita:longName="Related resources">
           <a:documentation>The &lt;lcResources> provides a list of related resources and information
@@ -580,10 +532,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcChallenge.element">
         <element name="lcChallenge" dita:longName="Learning challenge">
           <a:documentation>The &lt;lcChallenge> refers to what it is that you want the student to
@@ -610,10 +559,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcInstruction.element">
         <element name="lcInstruction" dita:longName="Learning instruction section">
           <a:documentation>The &lt;lcInstruction> describes the specifics of a learning
@@ -630,8 +576,7 @@ ORIGINAL CREATION DATE:
       <define name="lcInteraction.content">
         <zeroOrMore>
           <choice>
-            <ref name="lcInteractionBase"/>
-            <ref name="lcInteractionBase2" dita:since="1.3"/>
+            <ref name="lcInteractionBase" dita:since="1.3"/>
           </choice>
         </zeroOrMore>
       </define>
@@ -640,10 +585,7 @@ ORIGINAL CREATION DATE:
           <attribute name="spectitle"/>
         </optional>
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="lcInteraction.element">
         <element name="lcInteraction" dita:longName="Interactions">
           <a:documentation>The &lt;lcInteraction> is a wrapper element for all the interactions of the
@@ -662,109 +604,91 @@ ORIGINAL CREATION DATE:
   <div>
     <a:documentation>SPECIALIZATION ATTRIBUTE DECLARATIONS</a:documentation>
     <define name="learningBase.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/topic learningBase/learningBase "/>
       </optional>
     </define>
     <define name="learningBasebody.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/body learningBase/learningBasebody "/>
       </optional>
     </define>
     <define name="lcIntro.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcIntro "/>
       </optional>
     </define>
     <define name="lcObjectives.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcObjectives "/>
       </optional>
     </define>
     <define name="lcObjectivesStem.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/ph learningBase/lcObjectivesStem "/>
       </optional>
     </define>
     <define name="lcObjectivesGroup.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/ul learningBase/lcObjectivesGroup "/>
       </optional>
     </define>
     <define name="lcObjective.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/li learningBase/lcObjective "/>
       </optional>
     </define>
     <define name="lcAudience.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcAudience "/>
       </optional>
     </define>
     <define name="lcDuration.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcDuration "/>
       </optional>
     </define>
     <define name="lcTime.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/data learningBase/lcTime "/>
       </optional>
     </define>
     <define name="lcPrereqs.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcPrereqs "/>
       </optional>
     </define>
     <define name="lcSummary.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcSummary "/>
       </optional>
     </define>
     <define name="lcNextSteps.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcNextSteps "/>
       </optional>
     </define>
     <define name="lcReview.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcReview "/>
       </optional>
     </define>
     <define name="lcResources.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcResources "/>
       </optional>
     </define>
     <define name="lcChallenge.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcChallenge "/>
       </optional>
     </define>
     <define name="lcInstruction.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcInstruction "/>
       </optional>
     </define>
     <define name="lcInteraction.attlist" combine="interleave">
-      <ref name="global-atts"/>
       <optional>
         <attribute name="class" a:defaultValue="- topic/section learningBase/lcInteraction "/>
       </optional>

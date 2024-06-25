@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE learningObjectMap PUBLIC "-//OASIS//DTD DITA 2.0 Learning Object Map//EN" "learningObjectMap.dtd">
+<learningObjectMap id="test-learningObjectMap-2-0">
+    <title>Test Learning Object Map 2.0</title>
+  <learningObject>
+    <learningContentRef></learningContentRef>
+    <learningContentRef>
+      <learningContentComponentRef>
+        <learningContentComponentRef></learningContentComponentRef>
+      </learningContentComponentRef>
+    </learningContentRef>
+    <learningPostAssessmentRef></learningPostAssessmentRef>
+  </learningObject>
+  <learningGroup>
+    <learningGroup>
+      <learningOverviewRef></learningOverviewRef>
+    </learningGroup>
+  </learningGroup>
+</learningObjectMap>

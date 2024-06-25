@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningAssessment.rng:2.0" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<learningAssessment id="test-assessment-2-0">
+    <title>Test Assessment 2.0</title>
+    <shortdesc></shortdesc>
+    <learningAssessmentbody>
+      <section>
+        <title>Interactions</title>
+        <lcMatching>
+          <lcQuestion></lcQuestion>
+          <lcMatchTable>
+            <lcMatchingPair>
+              <lcItem>text only</lcItem>
+              <lcMatchingItem></lcMatchingItem>
+            </lcMatchingPair>
+          </lcMatchTable>
+        </lcMatching>
+        <lcMultipleSelect>
+          <lcQuestion>Text only</lcQuestion>
+          <lcAnswerOptionGroup>
+            <lcAnswerOption>
+              <lcAnswerContent>Text only 1</lcAnswerContent>
+            </lcAnswerOption>
+            <lcAnswerOption>              
+              <lcAnswerContent>Text only 2</lcAnswerContent>
+              <lcCorrectResponse/>
+              <lcFeedback>Text only feedback</lcFeedback>
+            </lcAnswerOption>
+          </lcAnswerOptionGroup>
+        </lcMultipleSelect>
+        <lcMultipleSelect>
+          <lcQuestion><p>Paragraph content</p>            
+          </lcQuestion>
+          <lcAnswerOptionGroup>
+            <lcAnswerOption>
+              <lcAnswerContent><p>Paragraph content 1</p></lcAnswerContent>
+            </lcAnswerOption>
+            <lcAnswerOption>              
+              <lcAnswerContent><p>Paragraph content 2</p></lcAnswerContent>
+              <lcCorrectResponse/>
+              <lcFeedback>T<p>Paragraph content feedback</p></lcFeedback>
+            </lcAnswerOption>
+          </lcAnswerOptionGroup>
+        </lcMultipleSelect>
+      </section>
+    </learningAssessmentbody>
+</learningAssessment>

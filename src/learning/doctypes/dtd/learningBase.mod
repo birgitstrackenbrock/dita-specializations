@@ -3,7 +3,7 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA learningBase                                 -->
-<!--  VERSION:   1.2                                               -->
+<!--  VERSION:   2.0                                               -->
 <!--  DATE:      November 2009                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
@@ -14,7 +14,7 @@
 <!--  Refer to this file by the following public identfier or an   -->
 <!--       appropriate system identifier                           -->
 <!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Base//EN"            -->
-<!--       Delivered as file "learningBase.mod"                         -->
+<!--       Delivered as file "learningBase.mod"                    -->
 <!-- ============================================================= -->
 <!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
 <!--                                                               -->
@@ -24,14 +24,15 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             May 2007                                          -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009.              -->
+<!--             (C) Copyright OASIS Open 2007, 2023.              -->
 <!--             All Rights Reserved.                              -->
 <!--                                                               -->
 <!--  CHANGE LOG:                                                  -->
 <!--                                                               -->
 <!--    Sept 2009: WEK: Make learningBasebody optional per         -->
 <!--    TC decision.                                               -->
-<!-- =============================================================   -->
+<!--    Nov 2023: WEK: Updated for DITA 2.0 .                      -->
+<!-- ============================================================= -->
 
 <!-- ============================================================= -->
 <!--                   ELEMENT NAME ENTITIES                       -->
@@ -179,8 +180,7 @@
 
 <!--                    LONG NAME: Learning objectives group       -->
 <!ENTITY % lcObjectivesGroup.content
-                       "((%data; |
-                          %data-about;)*,
+                       "((%data;)*,
                          (%lcObjective;)+)"
 >
 <!ENTITY % lcObjectivesGroup.attributes
@@ -386,8 +386,7 @@
 
 <!--                    LONG NAME: Interactions                    -->
 <!ENTITY % lcInteraction.content
-                       "(%lcInteractionBase; |
-                         %lcInteractionBase2;)*"
+                       "(%lcInteractionBase;)*"
 >
 <!ENTITY % lcInteraction.attributes
               "spectitle
@@ -407,24 +406,24 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  learningBase %global-atts;  class CDATA "- topic/topic learningBase/learningBase ">
-<!ATTLIST  learningBasebody %global-atts;  class CDATA "- topic/body learningBase/learningBasebody ">
-<!ATTLIST  lcIntro      %global-atts;  class CDATA "- topic/section learningBase/lcIntro ">
-<!ATTLIST  lcObjectives %global-atts;  class CDATA "- topic/section learningBase/lcObjectives ">
-<!ATTLIST  lcObjectivesStem %global-atts;  class CDATA "- topic/ph learningBase/lcObjectivesStem ">
-<!ATTLIST  lcObjectivesGroup %global-atts;  class CDATA "- topic/ul learningBase/lcObjectivesGroup ">
-<!ATTLIST  lcObjective  %global-atts;  class CDATA "- topic/li learningBase/lcObjective ">
-<!ATTLIST  lcAudience   %global-atts;  class CDATA "- topic/section learningBase/lcAudience ">
-<!ATTLIST  lcDuration   %global-atts;  class CDATA "- topic/section learningBase/lcDuration ">
-<!ATTLIST  lcTime       %global-atts;  class CDATA "- topic/data learningBase/lcTime ">
-<!ATTLIST  lcPrereqs    %global-atts;  class CDATA "- topic/section learningBase/lcPrereqs ">
-<!ATTLIST  lcSummary    %global-atts;  class CDATA "- topic/section learningBase/lcSummary ">
-<!ATTLIST  lcNextSteps  %global-atts;  class CDATA "- topic/section learningBase/lcNextSteps ">
-<!ATTLIST  lcReview     %global-atts;  class CDATA "- topic/section learningBase/lcReview ">
-<!ATTLIST  lcResources  %global-atts;  class CDATA "- topic/section learningBase/lcResources ">
-<!ATTLIST  lcChallenge  %global-atts;  class CDATA "- topic/section learningBase/lcChallenge ">
-<!ATTLIST  lcInstruction %global-atts;  class CDATA "- topic/section learningBase/lcInstruction ">
-<!ATTLIST  lcInteraction %global-atts;  class CDATA "- topic/section learningBase/lcInteraction ">
+<!ATTLIST  learningBase      class CDATA "- topic/topic learningBase/learningBase ">
+<!ATTLIST  learningBasebody  class CDATA "- topic/body learningBase/learningBasebody ">
+<!ATTLIST  lcIntro           class CDATA "- topic/section learningBase/lcIntro ">
+<!ATTLIST  lcObjectives      class CDATA "- topic/section learningBase/lcObjectives ">
+<!ATTLIST  lcObjectivesStem  class CDATA "- topic/ph learningBase/lcObjectivesStem ">
+<!ATTLIST  lcObjectivesGroup class CDATA "- topic/ul learningBase/lcObjectivesGroup ">
+<!ATTLIST  lcObjective       class CDATA "- topic/li learningBase/lcObjective ">
+<!ATTLIST  lcAudience        class CDATA "- topic/section learningBase/lcAudience ">
+<!ATTLIST  lcDuration        class CDATA "- topic/section learningBase/lcDuration ">
+<!ATTLIST  lcTime            class CDATA "- topic/data learningBase/lcTime ">
+<!ATTLIST  lcPrereqs         class CDATA "- topic/section learningBase/lcPrereqs ">
+<!ATTLIST  lcSummary         class CDATA "- topic/section learningBase/lcSummary ">
+<!ATTLIST  lcNextSteps       class CDATA "- topic/section learningBase/lcNextSteps ">
+<!ATTLIST  lcReview          class CDATA "- topic/section learningBase/lcReview ">
+<!ATTLIST  lcResources       class CDATA "- topic/section learningBase/lcResources ">
+<!ATTLIST  lcChallenge       class CDATA "- topic/section learningBase/lcChallenge ">
+<!ATTLIST  lcInstruction     class CDATA "- topic/section learningBase/lcInstruction ">
+<!ATTLIST  lcInteraction     class CDATA "- topic/section learningBase/lcInteraction ">
 
 <!-- ================== End of DITA learningBase ==================== -->
  

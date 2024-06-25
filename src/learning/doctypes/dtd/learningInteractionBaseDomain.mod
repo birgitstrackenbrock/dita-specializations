@@ -3,8 +3,8 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA Learning Interaction Base Domain             -->
-<!--  VERSION:   1.2                                               -->
-<!--  DATE:      Sept 2009                                         -->
+<!--  VERSION:   2.0                                               -->
+<!--  DATE:      November 2023                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
 <!-- ============================================================= -->
@@ -14,7 +14,6 @@
 <!--  Refer to this file by the following public identfier or an   -->
 <!--       appropriate system identifier                           -->
 <!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Interaction Base Domain//EN" -->
-<!--       Delivered as file "learningInteractionBaseDomain.mod"                      -->
 <!-- ============================================================= -->
 <!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
 <!--                                                               -->
@@ -22,9 +21,9 @@
 <!--             attributes for Learning Domain                    -->
 <!--                                                               -->
 <!-- ORIGINAL CREATION DATE:                                       -->
-<!--             Sept 2009                                         -->
+<!--             November 2023                                     -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2009.                    -->
+<!--             (C) Copyright OASIS Open 2014, 2023               -->
 <!--             All Rights Reserved.                              -->
 <!--                                                               -->
 <!-- ============================================================= -->
@@ -36,6 +35,8 @@
 
 <!ENTITY % lcInteractionBase
                        "lcInteractionBase"                           >
+<!ENTITY % lcInteractionLabel
+                       "lcInteractionLabel"                          >
 <!ENTITY % lcQuestionBase
                        "lcQuestionBase"                              >
 
@@ -45,37 +46,41 @@
 
 <!--                    LONG NAME: Learning interaction base       -->
 <!ENTITY % lcInteractionBase.content
-                       "((%title;)?,
+                       "((%lcInteractionLabel;)?,
                          (%lcQuestionBase;),
-                         (%fig.cnt;)*)"
+                         (%basic.block; |
+                          %basic.ph; |
+                          %data.elements.incl; |
+                          %foreign.unknown.incl; |
+                          %txt.incl;)*)"
 >
 <!ENTITY % lcInteractionBase.attributes
-              "id
-                          NMTOKEN
-                                    #REQUIRED
-               %conref-atts;
-               %select-atts;
-               %localization-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
-<!ELEMENT  lcInteractionBase %lcInteractionBase.content;>
-<!ATTLIST  lcInteractionBase %lcInteractionBase.attributes;>
+<!ELEMENT  lcInteractionBase2 %lcInteractionBase.content;>
+<!ATTLIST  lcInteractionBase2 %lcInteractionBase.attributes;>
 
 
 <!--                    LONG NAME: Learning interaction question base -->
+<!ENTITY % lcInteractionLabel.content
+                       "(%title.cnt;)*"
+>
+<!ENTITY % lcInteractionLabel.attributes
+              "%univ-atts;"
+>
+<!ELEMENT  lcInteractionLabel2 %lcInteractionLabel.content;>
+<!ATTLIST  lcInteractionLabel2 %lcInteractionLabel.attributes;>
+
+
+<!--                    LONG NAME: Learning interaction question base. -->
 <!ENTITY % lcQuestionBase.content
-                       "(%ph.cnt;)*"
+                       "(%div.cnt;)*"
 >
 <!ENTITY % lcQuestionBase.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
-<!ELEMENT  lcQuestionBase %lcQuestionBase.content;>
-<!ATTLIST  lcQuestionBase %lcQuestionBase.attributes;>
+<!ELEMENT  lcQuestionBase2 %lcQuestionBase.content;>
+<!ATTLIST  lcQuestionBase2 %lcQuestionBase.attributes;>
 
 
 
@@ -83,8 +88,8 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  lcInteractionBase %global-atts;  class CDATA "+ topic/fig learningInteractionBase-d/lcInteractionBase ">
-<!ATTLIST  lcQuestionBase %global-atts;  class CDATA "+ topic/p   learningInteractionBase-d/lcQuestionBase ">
+<!ATTLIST  lcInteractionBase  class CDATA "+ topic/div learningInteractionBase-d/lcInteractionBase ">
+<!ATTLIST  lcInteractionLabel class CDATA "+ topic/p   learningInteractionBase-d/lcInteractionLabel ">
+<!ATTLIST  lcQuestionBase     class CDATA "+ topic/div learningInteractionBase-d/lcQuestionBase ">
 
 <!-- ================== End of DITA Learning Interaction Base Domain ==================== -->
- 

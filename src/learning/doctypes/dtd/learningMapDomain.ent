@@ -3,8 +3,8 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA Learning Map Domain                          -->
-<!--  VERSION:   1.2                                               -->
-<!--  DATE:      November 2009                                     -->
+<!--  VERSION:   2.0                                               -->
+<!--  DATE:      November 2023                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
 <!-- ============================================================= -->
@@ -13,8 +13,8 @@
 <!--                                                               -->
 <!--  Refer to this file by the following public identfier or an   -->
 <!--       appropriate system identifier                           -->
-<!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Map Domain//EN"      -->
-<!--       Delivered as file "learningMapDomain.mod"                    -->
+<!-- PUBLIC "-//OASIS//ELEMENTS DITA 2.0 Learning Map Domain//EN"  -->
+<!--       Delivered as file "learningMapDomain.mod"               -->
 <!-- ============================================================= -->
 <!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
 <!--                                                               -->
@@ -24,16 +24,17 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             May 2007                                          -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009               -->
+<!--             (C) Copyright OASIS Open 2007, 2023               -->
 <!--             All Rights Reserved.                              -->
 <!--                                                               -->
 <!--                                                               -->
 <!--  16 Aug 2009: WEK Added learningContentComponentRef per TC    -->
 <!--  07 Dec 2009: RDA combined @id, conref-atts, select-atts, and -->
 <!--               localization-atts into a single ref to univ-atts -->
+<!--  13 Nov 2023: WEK Created 2.0 version                         -->
 <!--                                                               -->
 <!--                                                               -->
-<!-- =============================================================  -->
+<!-- ============================================================= -->
 
 <!-- ============================================================= -->
 <!--                    ELEMENT EXTENSION ENTITY DECLARATIONS      -->
@@ -44,14 +45,6 @@
    learningGroup |
    learningObjectMapRef |
    learningGroupMapRef"
->
-
-<!-- ============================================================= -->
-<!--                    DOMAIN ENTITY DECLARATION                  -->
-<!-- ============================================================= -->
-
-<!ENTITY learningmap-d-att
-  "(map learningmap-d)"
 >
 
 <!-- ================ End DITA Learning Map Domain ================== -->

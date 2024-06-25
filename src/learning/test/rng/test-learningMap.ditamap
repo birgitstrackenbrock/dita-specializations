@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningMap.rng:2.0" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<map id="test-learninMap-2-0">
+    <title>Test Learning Map 2.0</title>
+  <learningGroup></learningGroup>
+</map>

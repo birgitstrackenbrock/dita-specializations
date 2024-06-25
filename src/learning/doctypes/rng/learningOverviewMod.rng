@@ -9,9 +9,9 @@
 =============================================================
                    HEADER                                    
 =============================================================
- MODULE:    DITA learningOverview                            
- VERSION:   1.2                                              
- DATE:      November 2009                                    
+ MODULE:    DITA learningOverview topic type                     
+ VERSION:   2.0                                       
+ DATE:      November 2023                                    
                                                              
 =============================================================
 
@@ -21,8 +21,8 @@
                                                              
  Refer to this file by the following public identfier or an 
       appropriate system identifier 
-PUBLIC "-//OASIS//ELEMENTS DITA Learning Overview//EN"
-      Delivered as file "learningOverview.mod                     
+      
+urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningOverviewMod.rng:2.0
 
 =============================================================
 SYSTEM:     Darwin Information Typing Architecture (DITA)    
@@ -33,8 +33,12 @@ PURPOSE:    Declaring the elements and specialization
 ORIGINAL CREATION DATE:                                      
             May 2007                                         
                                                              
-            (C) Copyright OASIS Open 2007, 2009.             
-            All Rights Reserved.                             
+            (C) Copyright OASIS Open 2007, 2023.             
+            All Rights Reserved.       
+            
+UPDATES:                                                    
+   2023.11.05 WEK: Updated for DITA 2.0.
+
 =============================================================
 </headerComment>
     <moduleMetadata>
@@ -48,7 +52,6 @@ ORIGINAL CREATION DATE:
         <rncMod>urn:oasis:names:tc:dita:spec:learning:rnc:learningOverviewMod.rnc<var presep=":" name="ditaver"/></rncMod>
         <rngMod>urn:oasis:names:tc:dita:spec:learning:rng:learningOverviewMod.rng<var presep=":" name="ditaver"/></rngMod>
       </modulePublicIds>
-      <domainsContribution>(topic learningBase learningOverview)</domainsContribution>
     </moduleMetadata>
   </moduleDesc>
   <div>
@@ -70,9 +73,6 @@ ORIGINAL CREATION DATE:
       </define>
       <define name="learningOverview.content">
         <ref name="title"/>
-        <optional>
-          <ref name="titlealts"/>
-        </optional>
         <optional>
           <choice>
             <ref name="shortdesc"/>
@@ -97,10 +97,7 @@ ORIGINAL CREATION DATE:
         <ref name="conref-atts"/>
         <ref name="select-atts"/>
         <ref name="localization-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="learningOverview.element">
         <element name="learningOverview">
           <a:documentation><![CDATA[A Learning Overview topic identifies the learning objectives, includes other information helpful to the learner, such as prerequisites, duration, intended audience, and can include information and strategies that seeks to gain attention and stimulate recall of prior learning. ]]></a:documentation>
@@ -114,7 +111,7 @@ ORIGINAL CREATION DATE:
       <define name="learningOverview.attlist" combine="interleave">
         <ref name="learningOverview.attributes"/>
         <ref name="arch-atts"/>
-        <ref name="domains-att"/>
+        <ref name="specializations-att"/>
       </define>
     </div>
     <div>
@@ -143,10 +140,7 @@ ORIGINAL CREATION DATE:
       </define>
       <define name="learningOverviewbody.attributes">
         <ref name="univ-atts"/>
-        <optional>
-          <attribute name="outputclass"/>
-        </optional>
-      </define>
+     </define>
       <define name="learningOverviewbody.element">
         <element name="learningOverviewbody">
           <a:documentation><![CDATA[The <learningOverviewbody> element is the main body-level element in a learningOverview topic. A learningOverviewbody has a very specific structure, with the following elements in this order: <lcIntro>, <lcAudience>, <lcDuration>, <lcPrereqs>, <lcObjectives>, <lcResources>, followed by one or more <section> elements. Each of the learningOverviewbody sections are optional. ]]></a:documentation>
@@ -162,14 +156,12 @@ ORIGINAL CREATION DATE:
   <div>
     <a:documentation>SPECIALIZATION ATTRIBUTE DECLARATIONS</a:documentation>
     <define name="learningOverview.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="- topic/topic learningBase/learningBase     learningOverview/learningOverview "/>
       </optional>
     </define>
     <define name="learningOverviewbody.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="- topic/body  learningBase/learningBasebody learningOverview/learningOverviewbody "/>
       </optional>
     </define>

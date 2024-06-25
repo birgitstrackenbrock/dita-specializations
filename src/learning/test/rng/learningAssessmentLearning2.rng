@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="urn:oasis:names:tc:dita:rng:vocabularyModuleDesc.rng"
+                         schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="urn:oasis:names:tc:dita:rng:checkShell.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:dita="http://dita.oasis-open.org/architecture/2005/"
+         xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+  <moduleDesc xmlns="http://dita.oasis-open.org/architecture/2005/">
+      <moduleTitle>DITA Learning Assessment Topic Shell</moduleTitle>
+      <headerComment xml:space="preserve">
+=============================================================
+ MODULE:    DITA Learning Assessment Shell with learning2 domain                  
+ VERSION:   2.0                                       
+ DATE:      November 2023                                    
+                                                             
+=============================================================
+
+=============================================================
+                   PUBLIC DOCUMENT TYPE DEFINITION           
+                   TYPICAL INVOCATION                        
+                                                             
+ Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+
+urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningAssessmentLearning2.rng:2.0
+
+=============================================================
+SYSTEM:     Darwin Information Typing Architecture (DITA)    
+                                                             
+PURPOSE:    DTD to describe DITA learning Assessment topic   
+                                                             
+ORIGINAL CREATION DATE:                                      
+            Nov 2023                                         
+                                                             
+            (C) Copyright OASIS Open 2023           
+            All Rights Reserved.                             
+                                                             
+=============================================================
+  </headerComment>
+      <moduleMetadata>
+         <moduleType>topicshell</moduleType>
+         <moduleShortName>learningAssessment</moduleShortName>
+         <shellPublicIds>
+            <dtdShell>-//OASIS//DTD DITA<var presep=" " name="ditaver"/> Learning Assessment//EN</dtdShell>
+            <rncShell>urn:pubid:oasis:names:tc:dita:spec:learning:rnc:learningAssessmentLearning2.rnc<var presep=":" name="ditaver"/>
+            </rncShell>
+            <rngShell>urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningAssessmentLearning2.rng<var presep=":" name="ditaver"/>
+            </rngShell>
+            <xsdShell>urn:pubid:oasis:names:tc:dita:spec:learning:xsd:learningAssessmentLearning2.xsd<var presep=":" name="ditaver"/>
+            </xsdShell>
+         </shellPublicIds>
+      </moduleMetadata>
+  </moduleDesc>
+  <div>
+      <a:documentation>ROOT ELEMENT DECLARATION</a:documentation>
+      <start>
+         <ref name="learningAssessment.element"/>
+      </start>
+
+  </div>
+  <div>
+    <a:documentation>SPECIALIZATIONS ATTRIBUTE</a:documentation>
+    <define name="specializations-att">
+      <optional>
+        <attribute name="specializations"
+          a:defaultValue="
+          @props/audience
+          @props/deliveryTarget
+          @props/otherprops
+          @props/platform
+          @props/product"/>
+      </optional>
+    </define>
+  </div>
+  <div>
+      <a:documentation>MODULE INCLUSIONS</a:documentation>
+      <include href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningBaseMod.rng:2.0"/>
+      <include href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningAssessmentMod.rng:2.0">
+        <define name="learningAssessment-info-types">
+            <empty/>
+        </define>      
+      </include>
+      <include href="urn:pubid:oasis:names:tc:dita:rng:topicMod.rng:2.0"/>
+      <include href="urn:pubid:oasis:names:tc:dita:rng:deliveryTargetAttDomain.rng:2.0" dita:since="1.3"/>
+      <include href="urn:pubid:oasis:names:tc:dita:rng:highlightDomain.rng:2.0"/>
+      <include href="urn:pubid:oasis:names:tc:dita:rng:utilitiesDomain.rng:2.0"/>
+      <include href="urn:pubid:oasis:names:tc:dita:rng:releaseManagementDomain.rng:2.0"/>
+      <include href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningInteractionBaseDomain.rng:2.0"/>
+      <include href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learning2Domain.rng:2.0"/>
+      <include href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningMetadataDomain.rng:2.0"/>
+  </div>
+  <div>
+      <a:documentation>ID-DEFINING-ELEMENT OVERRIDES</a:documentation>
+      <define name="any">
+         <zeroOrMore>
+            <choice>
+               <ref name="idElements"/>
+               <element>
+                  <anyName>
+                     <except>
+                        <name>topic</name>
+                        <name>learningAssessment</name>
+                     </except>
+                  </anyName>
+                  <zeroOrMore>
+                     <attribute>
+                        <anyName/>
+                     </attribute>
+                  </zeroOrMore>
+                  <ref name="any"/>
+               </element>
+               <text/>
+            </choice>
+         </zeroOrMore>
+      </define>
+  </div>
+</grammar>

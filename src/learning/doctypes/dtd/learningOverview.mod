@@ -3,8 +3,8 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA learningOverview                             -->
-<!--  VERSION:   1.2                                               -->
-<!--  DATE:      November 2009                                     -->
+<!--  VERSION:   2.0                                              -->
+<!--  DATE:      November 2023                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
 <!-- ============================================================= -->
@@ -24,7 +24,7 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             May 2007                                          -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009.              -->
+<!--             (C) Copyright OASIS Open 2007, 2023.              -->
 <!--             All Rights Reserved.                              -->
 <!-- ============================================================= -->
 
@@ -69,10 +69,9 @@
 <!ELEMENT  learningOverview %learningOverview.content;>
 <!ATTLIST  learningOverview %learningOverview.attributes;
                  %arch-atts;
-                 domains 
+                 specializations
                         CDATA
-                                  "&included-domains;"
->
+                                  "&included-domains;">
 
 
 <!--                    LONG NAME: LearningOverviewbody            -->
@@ -86,10 +85,7 @@
                          (%section;)*)"
 >
 <!ENTITY % learningOverviewbody.attributes
-              "%univ-atts;
-               outputclass
-                          CDATA
-                                    #IMPLIED"
+              "%univ-atts;"
 >
 <!ELEMENT  learningOverviewbody %learningOverviewbody.content;>
 <!ATTLIST  learningOverviewbody %learningOverviewbody.attributes;>
@@ -100,8 +96,8 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  learningOverview %global-atts;  class CDATA "- topic/topic learningBase/learningBase     learningOverview/learningOverview ">
-<!ATTLIST  learningOverviewbody %global-atts;  class CDATA "- topic/body  learningBase/learningBasebody learningOverview/learningOverviewbody ">
+<!ATTLIST  learningOverview     class CDATA "- topic/topic learningBase/learningBase     learningOverview/learningOverview ">
+<!ATTLIST  learningOverviewbody class CDATA "- topic/body  learningBase/learningBasebody learningOverview/learningOverviewbody ">
 
 <!-- ================== End of DITA learningOverview ==================== -->
  

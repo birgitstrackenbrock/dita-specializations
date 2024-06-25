@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningContent.rng:2.0" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<learningContent id="test-content-2-0">
+    <title>Test Learning Content 2.0</title>
+    <shortdesc></shortdesc>
+  <prolog>
+    <titlealt title-role="navtitle"></titlealt>
+  </prolog>
+  <learningContentbody></learningContentbody>
+</learningContent>

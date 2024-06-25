@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="./learningAssessmentLearning2.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<learningAssessment id="test-assessment-2-0">
+    <title>Test Assessment 2.0</title>
+    <shortdesc></shortdesc>
+    <learningAssessmentbody>
+      <section>
+        <title>Interactions</title>
+        <lcMatching2>
+          <lcQuestion2></lcQuestion2>
+          <lcMatchTable2>
+            <lcMatchingPair2>
+              <lcItem2>text only</lcItem2>
+              <lcMatchingItem2></lcMatchingItem2>
+            </lcMatchingPair2>
+          </lcMatchTable2>
+        </lcMatching2>
+        <lcHotspot2>
+          <lcQuestion2></lcQuestion2>
+          <lcHotspotMap2>
+            <image></image>
+            <lcArea2>
+              <lcAreaShape2></lcAreaShape2>
+              <lcAreaCoords2></lcAreaCoords2>
+            </lcArea2>
+          </lcHotspotMap2>
+        </lcHotspot2>
+        <lcOpenQuestion2>
+          <lcQuestion2></lcQuestion2>
+          <lcOpenAnswer2>
+          </lcOpenAnswer2>
+        </lcOpenQuestion2>
+        <lcSequencing2>
+          <lcQuestion2></lcQuestion2>
+          <lcSequenceOptionGroup2>
+            <lcSequenceOption2>
+              <lcAnswerContent2></lcAnswerContent2>
+              <lcSequence2 value="sdfsd"></lcSequence2>
+            </lcSequenceOption2>
+          </lcSequenceOptionGroup2>
+        </lcSequencing2>
+        <lcSingleSelect2>
+          <lcQuestion2></lcQuestion2>
+          <lcAnswerOptionGroup2>
+            <lcAnswerOption2>
+              <lcAnswerContent2></lcAnswerContent2>
+            </lcAnswerOption2>
+          </lcAnswerOptionGroup2>
+        </lcSingleSelect2>
+        <lcTrueFalse2>
+          <lcQuestion2></lcQuestion2>
+          <lcAnswerOptionGroup2>
+            <lcAnswerOption2>
+              <lcAnswerContent2></lcAnswerContent2>
+            </lcAnswerOption2>
+          </lcAnswerOptionGroup2>
+        </lcTrueFalse2>
+        <lcMultipleSelect2>
+          <lcQuestion2>Text only</lcQuestion2>
+          <lcAnswerOptionGroup2>
+            <lcAnswerOption2>
+              <lcAnswerContent2>Text only 1</lcAnswerContent2>
+            </lcAnswerOption2>
+            <lcAnswerOption2>              
+              <lcAnswerContent2>Text only 2</lcAnswerContent2>
+              <lcCorrectResponse2/>
+              <lcFeedback2>Text only feedback</lcFeedback2>
+            </lcAnswerOption2>
+          </lcAnswerOptionGroup2>
+        </lcMultipleSelect2>
+        <lcMultipleSelect2>
+          <lcInteractionLabel2>Interaction label</lcInteractionLabel2>
+          <lcQuestion2><p>Paragraph content</p>            
+          </lcQuestion2>
+          <lcAnswerOptionGroup2>
+            <lcAnswerOption2>
+              <lcAnswerContent2><p>Paragraph content 1</p></lcAnswerContent2>
+            </lcAnswerOption2>
+            <lcAnswerOption2>              
+              <lcAnswerContent2><p>Paragraph content 2</p></lcAnswerContent2>
+              <lcCorrectResponse2/>
+              <lcFeedback2>T<p>Paragraph content feedback</p></lcFeedback2>
+            </lcAnswerOption2>
+          </lcAnswerOptionGroup2>
+        </lcMultipleSelect2>
+      </section>
+    </learningAssessmentbody>
+</learningAssessment>

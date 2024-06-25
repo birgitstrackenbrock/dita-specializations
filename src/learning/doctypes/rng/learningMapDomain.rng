@@ -9,8 +9,8 @@
                    HEADER                                    
 =============================================================
  MODULE:    DITA Learning Map Domain                         
- VERSION:   1.2                                              
- DATE:      November 2009                                    
+ VERSION:   2.0                                       
+ DATE:      November 2023                                    
                                                              
 =============================================================
 
@@ -20,8 +20,8 @@
                                                              
  Refer to this file by the following public identfier or an 
       appropriate system identifier 
-PUBLIC "-//OASIS//ELEMENTS DITA Learning Map Domain//EN"
-      Delivered as file "learningMapDomain.mod"                   
+      
+urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningMapDomain.rng:2.0
 
 =============================================================
 SYSTEM:     Darwin Information Typing Architecture (DITA)    
@@ -32,13 +32,16 @@ PURPOSE:    Declaring the elements and specialization
 ORIGINAL CREATION DATE:                                      
             May 2007                                         
                                                              
-            (C) Copyright OASIS Open 2007, 2009              
+            (C) Copyright OASIS Open 2007, 2023              
             All Rights Reserved.                             
                                                              
-                                                             
+                    
+UPDATES:                                                    
+                    
  16 Aug 2009: WEK Added learningContentComponentRef per TC   
  07 Dec 2009: RDA combined @id, conref-atts, select-atts, and
               localization-atts into a single ref to univ-atts
+ 05 Nov 2023: WEK 2.0 version
                                                              
                                                              
 ============================================================= 
@@ -53,7 +56,6 @@ ORIGINAL CREATION DATE:
         <rncMod>urn:oasis:names:tc:dita:spec:learning:rnc:learningMapDomain.rnc<var presep=":" name="ditaver"/></rncMod>
         <rngMod>urn:oasis:names:tc:dita:spec:learning:rng:learningMapDomain.rng<var presep=":" name="ditaver"/></rngMod>
       </modulePublicIds>
-      <domainsContribution>(map learningmap-d)</domainsContribution>
     </moduleMetadata>
   </moduleDesc>
   <div>
@@ -133,10 +135,7 @@ ORIGINAL CREATION DATE:
       <optional>
         <attribute name="copy-to"/>
       </optional>
-      <optional>
-        <attribute name="outputclass"/>
-      </optional>
-      <optional>
+     <optional>
         <attribute name="cascade" dita:since="1.3"/>
       </optional>
       <optional>
@@ -599,68 +598,57 @@ ORIGINAL CREATION DATE:
   <div>
     <a:documentation>SPECIALIZATION ATTRIBUTE DECLARATIONS</a:documentation>
     <define name="learningObject.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningObject "/>
       </optional>
     </define>
     <define name="learningGroup.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningGroup "/>
       </optional>
     </define>
     <define name="learningGroupMapRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningGroupMapRef "/>
       </optional>
     </define>
     <define name="learningObjectMapRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningObjectMapRef "/>
       </optional>
     </define>
     <define name="learningPlanRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningPlanRef "/>
       </optional>
     </define>
     <define name="learningOverviewRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningOverviewRef "/>
       </optional>
     </define>
     <define name="learningContentRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningContentRef "/>
       </optional>
     </define>
     <define name="learningContentComponentRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningContentComponentRef "/>
       </optional>
     </define>
     <define name="learningSummaryRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningSummaryRef "/>
       </optional>
     </define>
     <define name="learningPreAssessmentRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningPreAssessmentRef "/>
       </optional>
     </define>
     <define name="learningPostAssessmentRef.attlist" combine="interleave">
-      <ref name="global-atts"/>
-      <optional>
+     <optional>
         <attribute name="class" a:defaultValue="+ map/topicref learningmap-d/learningPostAssessmentRef "/>
       </optional>
     </define>

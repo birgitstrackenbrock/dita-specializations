@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="urn:pubid:oasis:names:tc:dita:spec:learning:rng:learningSummary.rng:2.0" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<learningSummary id="test-Summary-2-0">
+    <title>Test Learning Summary 2.0</title>
+    <shortdesc></shortdesc>
+  <learningSummarybody></learningSummarybody>
+</learningSummary>

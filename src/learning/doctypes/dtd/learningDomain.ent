@@ -3,8 +3,8 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA Learning Domain                              -->
-<!--  VERSION:   1.2                                               -->
-<!--  DATE:      November 2009                                     -->
+<!--  VERSION:   2.0                                               -->
+<!--  DATE:      November 2024                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
 <!-- ============================================================= -->
@@ -13,8 +13,7 @@
 <!--                                                               -->
 <!--  Refer to this file by the following public identfier or an   -->
 <!--       appropriate system identifier                           -->
-<!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Domain//EN"          -->
-<!--       Delivered as file "learningDomain.mod"                      -->
+<!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Domain//EN"        -->
 <!-- ============================================================= -->
 <!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
 <!--                                                               -->
@@ -22,25 +21,18 @@
 <!--             attributes for Learning Domain                    -->
 <!--                                                               -->
 <!-- ORIGINAL CREATION DATE:                                       -->
-<!--             May 2007                                          -->
+<!--             November 2023                                     -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009.              -->
+<!--             (C) Copyright OASIS Open 2014, 2023               -->
 <!--             All Rights Reserved.                              -->
 <!--                                                               -->
-<!--  CHANGE LOG:                                                  -->
-<!--                                                               -->
-<!--    Sept 2009: WEK: added lcMatchingItemFeedback per           -->
-<!--    TC decision.                                               -->
 <!-- =============================================================   -->
 
 <!-- ============================================================= -->
 <!--                    ELEMENT EXTENSION ENTITY DECLARATIONS      -->
 <!-- ============================================================= -->
 
-<!ENTITY % learning-d-note
-  "lcInstructornote"
->
-<!ENTITY % learning-d-fig
+<!ENTITY % learning-d-div
   "lcTrueFalse |
    lcSingleSelect |
    lcMultipleSelect |
@@ -58,14 +50,9 @@
    lcHotspot |
    lcOpenQuestion"
 >
-
-<!-- ============================================================= -->
-<!--                    DOMAIN ENTITY DECLARATION                  -->
-<!-- ============================================================= -->
-
-<!ENTITY learning-d-att
-  "(topic learningInteractionBase-d learning-d)"
+<!ENTITY % learning-d-note
+  "lcInstructornote"
 >
 
-<!-- ================ End DITA Learning Domain ================== -->
+<!-- ================ End DITA Learning  Domain ================== -->
  

@@ -3,7 +3,7 @@
 <!--                    HEADER                                     -->
 <!-- ============================================================= -->
 <!--  MODULE:    DITA Learning Metadata Domain                     -->
-<!--  VERSION:   1.2                                               -->
+<!--  VERSION:   2.0                                               -->
 <!--  DATE:      November 2009                                     -->
 <!--                                                               -->
 <!-- ============================================================= -->
@@ -14,7 +14,7 @@
 <!--  Refer to this file by the following public identfier or an   -->
 <!--       appropriate system identifier                           -->
 <!-- PUBLIC "-//OASIS//ELEMENTS DITA Learning Metadata Domain//EN" -->
-<!--       Delivered as file "learningMetadataDomain.mod"               -->
+<!--       Delivered as file "learningMetadataDomain.mod"          -->
 <!-- ============================================================= -->
 <!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
 <!--                                                               -->
@@ -24,7 +24,7 @@
 <!-- ORIGINAL CREATION DATE:                                       -->
 <!--             May 2007                                          -->
 <!--                                                               -->
-<!--             (C) Copyright OASIS Open 2007, 2009.              -->
+<!--             (C) Copyright OASIS Open 2007, 2023.              -->
 <!--             All Rights Reserved.                              -->
 <!-- ============================================================= -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -113,7 +113,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (atomic |
+                          (atomic |
                            branched |
                            collection |
                            hierarchical |
@@ -166,7 +166,7 @@
                           CDATA
                                     #IMPLIED
                value
-                                                     (1 |
+                          (1 |
                            2 |
                            3 |
                            4 |
@@ -194,7 +194,7 @@
                           CDATA
                                     #IMPLIED
                value
-                                                     (pc-dos |
+                          (pc-dos |
                            ms-windows |
                            macos |
                            unix |
@@ -268,7 +268,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (active |
+                          (active |
                            expositive |
                            mixed |
                            -dita-use-conref-target)
@@ -292,7 +292,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (exercise |
+                          (exercise |
                            simulation |
                            questionnaire |
                            diagram |
@@ -328,7 +328,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (verylow |
+                          (verylow |
                            low |
                            medium |
                            high |
@@ -354,7 +354,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (verylow |
+                          (verylow |
                            low |
                            medium |
                            high |
@@ -380,7 +380,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (teacher |
+                          (teacher |
                            author |
                            learner |
                            manager |
@@ -405,7 +405,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (school |
+                          (school |
                            highereducation |
                            training |
                            other |
@@ -451,7 +451,7 @@
                                     ''
                %univ-atts;
                value
-                                                     (veryeasy |
+                          (veryeasy |
                            easy |
                            medium |
                            difficult |
@@ -489,22 +489,22 @@
 <!--             SPECIALIZATION ATTRIBUTE DECLARATIONS             -->
 <!-- ============================================================= -->
   
-<!ATTLIST  lcLom        %global-atts;  class CDATA "+ topic/metadata learningmeta-d/lcLom ">
-<!ATTLIST  lomCoverage  %global-atts;  class CDATA "+ topic/data learningmeta-d/lomCoverage ">
-<!ATTLIST  lomStructure %global-atts;  class CDATA "+ topic/data learningmeta-d/lomStructure ">
-<!ATTLIST  lomAggregationLevel %global-atts;  class CDATA "+ topic/data learningmeta-d/lomAggregationLevel ">
-<!ATTLIST  lomTechRequirement %global-atts;  class CDATA "+ topic/data learningmeta-d/lomTechRequirement ">
-<!ATTLIST  lomInstallationRemarks %global-atts;  class CDATA "+ topic/data learningmeta-d/lomInstallationRemarks ">
-<!ATTLIST  lomOtherPlatformRequirements %global-atts;  class CDATA "+ topic/data learningmeta-d/lomOtherPlatformRequirements ">
-<!ATTLIST  lomInteractivityType %global-atts;  class CDATA "+ topic/data learningmeta-d/lomInteractivityType ">
-<!ATTLIST  lomLearningResourceType %global-atts;  class CDATA "+ topic/data learningmeta-d/lomLearningResourceType ">
-<!ATTLIST  lomInteractivityLevel %global-atts;  class CDATA "+ topic/data learningmeta-d/lomInteractivityLevel ">
-<!ATTLIST  lomSemanticDensity %global-atts;  class CDATA "+ topic/data learningmeta-d/lomSemanticDensity ">
-<!ATTLIST  lomIntendedUserRole %global-atts;  class CDATA "+ topic/data learningmeta-d/lomIntendedUserRole ">
-<!ATTLIST  lomContext   %global-atts;  class CDATA "+ topic/data learningmeta-d/lomContext ">
-<!ATTLIST  lomTypicalAgeRange %global-atts;  class CDATA "+ topic/data learningmeta-d/lomTypicalAgeRange ">
-<!ATTLIST  lomDifficulty %global-atts;  class CDATA "+ topic/data learningmeta-d/lomDifficulty ">
-<!ATTLIST  lomTypicalLearningTime %global-atts;  class CDATA "+ topic/data learningmeta-d/lomTypicalLearningTime ">
+<!ATTLIST  lcLom                   class CDATA "+ topic/metadata learningmeta-d/lcLom ">
+<!ATTLIST  lomCoverage             class CDATA "+ topic/data learningmeta-d/lomCoverage ">
+<!ATTLIST  lomStructure            class CDATA "+ topic/data learningmeta-d/lomStructure ">
+<!ATTLIST  lomAggregationLevel     class CDATA "+ topic/data learningmeta-d/lomAggregationLevel ">
+<!ATTLIST  lomTechRequirement      class CDATA "+ topic/data learningmeta-d/lomTechRequirement ">
+<!ATTLIST  lomInstallationRemarks  class CDATA "+ topic/data learningmeta-d/lomInstallationRemarks ">
+<!ATTLIST  lomOtherPlatformRequirements class CDATA "+ topic/data learningmeta-d/lomOtherPlatformRequirements ">
+<!ATTLIST  lomInteractivityType    class CDATA "+ topic/data learningmeta-d/lomInteractivityType ">
+<!ATTLIST  lomLearningResourceType class CDATA "+ topic/data learningmeta-d/lomLearningResourceType ">
+<!ATTLIST  lomInteractivityLevel   class CDATA "+ topic/data learningmeta-d/lomInteractivityLevel ">
+<!ATTLIST  lomSemanticDensity      class CDATA "+ topic/data learningmeta-d/lomSemanticDensity ">
+<!ATTLIST  lomIntendedUserRole     class CDATA "+ topic/data learningmeta-d/lomIntendedUserRole ">
+<!ATTLIST  lomContext              class CDATA "+ topic/data learningmeta-d/lomContext ">
+<!ATTLIST  lomTypicalAgeRange      class CDATA "+ topic/data learningmeta-d/lomTypicalAgeRange ">
+<!ATTLIST  lomDifficulty           class CDATA "+ topic/data learningmeta-d/lomDifficulty ">
+<!ATTLIST  lomTypicalLearningTime  class CDATA "+ topic/data learningmeta-d/lomTypicalLearningTime ">
 
 <!-- ================== End of DITA Learning Metadata Domain ==================== -->
  
