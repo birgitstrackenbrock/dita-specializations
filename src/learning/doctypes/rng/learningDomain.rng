@@ -208,12 +208,12 @@ UPDATES:
             <ref name="lcAsset"/>
           </zeroOrMore>
           <ref name="lcAnswerOptionGroup"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcFeedbackIncorrect"/>
-          </optional>
-          <optional>
+          </zeroOrMore>
+          <zeroOrMore>
             <ref name="lcFeedbackCorrect"/>
-          </optional>
+          </zeroOrMore>
           <zeroOrMore>
             <ref name="data"/>
           </zeroOrMore>
@@ -250,12 +250,12 @@ UPDATES:
             <ref name="lcAsset"/>
           </zeroOrMore>
           <ref name="lcAnswerOptionGroup"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcFeedbackIncorrect"/>
-          </optional>
-          <optional>
+          </zeroOrMore>
+          <zeroOrMore>
             <ref name="lcFeedbackCorrect"/>
-          </optional>
+          </zeroOrMore>
           <zeroOrMore>
             <ref name="data"/>
           </zeroOrMore>
@@ -292,12 +292,12 @@ UPDATES:
             <ref name="lcAsset"/>
           </zeroOrMore>
           <ref name="lcAnswerOptionGroup"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcFeedbackIncorrect"/>
-          </optional>
-          <optional>
+          </zeroOrMore>
+          <zeroOrMore>
             <ref name="lcFeedbackCorrect"/>
-          </optional>
+          </zeroOrMore>
           <zeroOrMore>
             <ref name="data"/>
           </zeroOrMore>
@@ -334,12 +334,12 @@ UPDATES:
             <ref name="lcAsset"/>
           </zeroOrMore>
           <ref name="lcSequenceOptionGroup"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcFeedbackIncorrect"/>
-          </optional>
-          <optional>
+          </zeroOrMore>
+          <zeroOrMore>
             <ref name="lcFeedbackCorrect"/>
-          </optional>
+          </zeroOrMore>
           <zeroOrMore>
             <ref name="data"/>
           </zeroOrMore>
@@ -376,12 +376,12 @@ UPDATES:
             <ref name="lcAsset"/>
           </zeroOrMore>
           <ref name="lcMatchTable"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcFeedbackIncorrect"/>
-          </optional>
-          <optional>
+          </zeroOrMore>
+          <zeroOrMore>
             <ref name="lcFeedbackCorrect"/>
-          </optional>
+          </zeroOrMore>
           <zeroOrMore>
             <ref name="data"/>
           </zeroOrMore>
@@ -415,12 +415,12 @@ UPDATES:
           </optional>
           <ref name="lcQuestion"/>
           <ref name="lcHotspotMap"/>
-          <optional>
+          <zeroOrMore>
             <ref name="lcFeedbackIncorrect"/>
-          </optional>
-          <optional>
+          </zeroOrMore>
+          <zeroOrMore>
             <ref name="lcFeedbackCorrect"/>
-          </optional>
+          </zeroOrMore>
           <zeroOrMore>
             <ref name="data"/>
           </zeroOrMore>
@@ -459,12 +459,12 @@ UPDATES:
           <optional>
             <ref name="lcOpenAnswer"/>
           </optional>
-          <optional>
+          <zeroOrMore>
             <ref name="lcFeedbackIncorrect"/>
-          </optional>
-          <optional>
+          </zeroOrMore>
+          <zeroOrMore>
             <ref name="lcFeedbackCorrect"/>
-          </optional>
+          </zeroOrMore>
           <zeroOrMore>
             <ref name="data"/>
           </zeroOrMore>
